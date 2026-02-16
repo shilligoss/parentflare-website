@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ParentFlare — AI-powered activities and parenting scripts for the moments you need them most. Screen-free ideas, custom activities, and the exact words to say.">
+  <meta property="og:title" content="ParentFlare — Make parenting doable.">
+  <meta property="og:description" content="AI-powered activities and parenting scripts for the moments you need them most.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://parentflare.com">
+  <title>ParentFlare — Make parenting doable.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --flame: #d4622c;
+      --flame-deep: #b8491e;
+      --flame-light: #f0985a;
+      --charcoal: #2c1810;
+      --warm-gray: #78716c;
+      --soft-gray: #94908a;
+      --cream: #faf8f5;
+      --warm-white: #fdf6f0;
+      --purple: #7c3aed;
+      --blue: #2563eb;
+    }
+
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'DM Sans', -apple-system, system-ui, sans-serif;
+      color: var(--charcoal);
+      background: var(--cream);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---- FLARE ANIMATION ---- */
+    @keyframes flare1 { 0% { bottom:-80px;opacity:0;transform:translateX(0) scale(0.3)} 15%{opacity:0.7} 60%{opacity:0.3} 100%{bottom:110%;opacity:0;transform:translateX(30px) scale(1.2)} }
+    @keyframes flare2 { 0% { bottom:-100px;opacity:0;transform:translateX(0) scale(0.3)} 15%{opacity:0.6} 60%{opacity:0.2} 100%{bottom:110%;opacity:0;transform:translateX(-40px) scale(1.3)} }
+    @keyframes flare3 { 0% { bottom:-60px;opacity:0;transform:translateX(0) scale(0.2)} 15%{opacity:0.8} 60%{opacity:0.25} 100%{bottom:110%;opacity:0;transform:translateX(20px) scale(1.1)} }
+    @keyframes flare4 { 0% { bottom:-120px;opacity:0;transform:translateX(0) scale(0.4)} 15%{opacity:0.5} 60%{opacity:0.2} 100%{bottom:110%;opacity:0;transform:translateX(-25px) scale(1.4)} }
+    @keyframes flare5 { 0% { bottom:-90px;opacity:0;transform:translateX(0) scale(0.3)} 15%{opacity:0.65} 60%{opacity:0.2} 100%{bottom:110%;opacity:0;transform:translateX(15px) scale(1)} }
+
+    .flare-container { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .flare { position: absolute; border-radius: 50%; filter: blur(20px); }
+    .f1 { left:8%;width:50px;height:50px;background:radial-gradient(circle,#ff6b35 0%,#f7931e 50%,transparent 100%);animation:flare1 4.5s ease-out infinite }
+    .f2 { left:25%;width:70px;height:70px;background:radial-gradient(circle,#ff8c42 0%,#ffa07a 50%,transparent 100%);animation:flare2 5.5s ease-out infinite;animation-delay:1.2s }
+    .f3 { left:50%;width:40px;height:40px;background:radial-gradient(circle,#ff5722 0%,#ff7043 50%,transparent 100%);animation:flare3 4s ease-out infinite;animation-delay:2s }
+    .f4 { left:72%;width:60px;height:60px;background:radial-gradient(circle,#ff9e44 0%,#ffb366 50%,transparent 100%);animation:flare4 6s ease-out infinite;animation-delay:0.5s }
+    .f5 { left:88%;width:45px;height:45px;background:radial-gradient(circle,#ffad60 0%,#ffc490 50%,transparent 100%);animation:flare5 5s ease-out infinite;animation-delay:1.8s }
+
+    /* ---- HERO ---- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(160deg, #ffc4a3 0%, #ff9a76 35%, #e8845a 60%, #7eb6d9 100%);
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+    }
+
+    .hero-logo {
+      width: 72px; height: 72px;
+      background: var(--flame);
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 28px;
+      box-shadow: 0 0 30px rgba(212,98,44,0.4), 0 0 80px rgba(212,98,44,0.15);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 7vw, 56px);
+      font-weight: 800;
+      color: var(--charcoal);
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+
+    .hero-tagline {
+      font-size: clamp(16px, 3vw, 20px);
+      font-weight: 500;
+      color: rgba(44,24,16,0.75);
+      line-height: 1.5;
+      margin-bottom: 36px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--charcoal);
+      color: white;
+      border: none;
+      border-radius: 16px;
+      padding: 18px 36px;
+      font-size: 18px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 20px rgba(44,24,16,0.25);
+    }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(44,24,16,0.3); }
+    .hero-cta:active { transform: scale(0.97); }
+
+    .hero-sub {
+      margin-top: 16px;
+      font-size: 14px;
+      color: rgba(44,24,16,0.5);
+    }
+
+    /* ---- SECTION BASE ---- */
+    section { padding: 100px 24px; }
+    .section-inner { max-width: 800px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--flame);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-desc {
+      font-size: 17px;
+      color: var(--warm-gray);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    /* ---- PROBLEM ---- */
+    .problem {
+      background: var(--charcoal);
+      color: white;
+    }
+    .problem .section-label { color: var(--flame-light); }
+    .problem .section-title { color: white; }
+    .problem .section-desc { color: rgba(255,255,255,0.65); }
+
+    .problem-moments {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .moment-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 24px;
+    }
+
+    .moment-card .moment-time {
+      font-size: 13px;
+      color: var(--flame-light);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .moment-card p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    /* ---- FEATURES ---- */
+    .features {
+      background: var(--warm-white);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 24px;
+      padding: 32px 28px;
+      box-shadow: 0 2px 16px rgba(44,24,16,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(44,24,16,0.08); }
+
+    .feature-icon {
+      width: 56px; height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+
+    .feature-card p {
+      font-size: 15px;
+      color: var(--warm-gray);
+      line-height: 1.6;
+    }
+
+    .feature-card.card-ideas .feature-icon { background: linear-gradient(135deg, #f5f0eb, #ede5dc); }
+    .feature-card.card-magic .feature-icon { background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(124,58,237,0.06)); }
+    .feature-card.card-words .feature-icon { background: linear-gradient(135deg, rgba(37,99,235,0.12), rgba(37,99,235,0.06)); }
+
+    /* ---- HOW IT WORKS ---- */
+    .how-it-works { background: var(--cream); }
+
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 48px;
+      position: relative;
+    }
+
+    .step {
+      display: flex;
+      gap: 20px;
+      padding: 28px 0;
+      border-bottom: 1px solid #ede9e1;
+    }
+    .step:last-child { border-bottom: none; }
+
+    .step-number {
+      width: 40px; height: 40px;
+      background: var(--flame);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .step h3 {
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .step p {
+      font-size: 15px;
+      color: var(--warm-gray);
+      line-height: 1.6;
+    }
+
+    /* ---- SOCIAL PROOF ---- */
+    .proof {
+      background: var(--warm-white);
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .quote-card {
+      background: white;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 2px 12px rgba(44,24,16,0.04);
+    }
+
+    .quote-card .stars {
+      color: #f59e0b;
+      font-size: 16px;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+
+    .quote-card blockquote {
+      font-size: 16px;
+      color: var(--charcoal);
+      line-height: 1.7;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .quote-card .attribution {
+      font-size: 14px;
+      color: var(--soft-gray);
+      font-weight: 600;
+    }
+
+    /* ---- EMAIL CAPTURE ---- */
+    .capture {
+      position: relative;
+      background: linear-gradient(160deg, #ffc4a3 0%, #ff9a76 35%, #e8845a 60%, #7eb6d9 100%);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .capture .section-title { color: var(--charcoal); }
+    .capture .section-desc {
+      color: rgba(44,24,16,0.7);
+      margin: 0 auto 32px;
+    }
+
+    .capture-box {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 24px;
+      padding: 36px 28px;
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .capture-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .capture-box .capture-sub {
+      font-size: 15px;
+      color: var(--warm-gray);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .capture-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .capture-form input[type="email"] {
+      width: 100%;
+      padding: 16px 18px;
+      border-radius: 14px;
+      border: 2px solid #e5e1d8;
+      font-size: 16px;
+      font-family: inherit;
+      outline: none;
+      background: white;
+      color: var(--charcoal);
+      text-align: center;
+    }
+    .capture-form input[type="email"]:focus { border-color: var(--flame); }
+
+    .capture-form button {
+      width: 100%;
+      padding: 16px;
+      border-radius: 14px;
+      border: none;
+      background: var(--charcoal);
+      color: white;
+      font-size: 17px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+      box-shadow: 0 4px 16px rgba(44,24,16,0.2);
+    }
+    .capture-form button:hover { transform: translateY(-1px); }
+    .capture-form button:active { transform: scale(0.97); }
+
+    .capture-fine {
+      font-size: 12px;
+      color: rgba(44,24,16,0.4);
+      margin-top: 12px;
+    }
+
+    .capture-success {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .capture-success h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .capture-success p {
+      font-size: 15px;
+      color: var(--warm-gray);
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.5);
+      padding: 48px 24px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .footer-tagline {
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 24px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: white; }
+
+    footer .copyright {
+      font-size: 13px;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* ---- NAV ---- */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .nav.scrolled {
+      background: rgba(250,248,245,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 8px rgba(44,24,16,0.06);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo {
+      width: 36px; height: 36px;
+      background: var(--flame);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .nav-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--charcoal);
+    }
+
+    .nav-cta {
+      background: var(--flame);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.15s ease;
+    }
+    .nav-cta:hover { transform: translateY(-1px); }
+
+    /* ---- ANIMATIONS ---- */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (min-width: 640px) {
+      .problem-moments { grid-template-columns: 1fr 1fr; }
+      .feature-grid { grid-template-columns: 1fr 1fr 1fr; }
+      .quote-grid { grid-template-columns: 1fr 1fr; }
+      .capture-form { flex-direction: row; }
+      .capture-form input[type="email"] { text-align: left; flex: 1; }
+      .capture-form button { width: auto; padding: 16px 28px; }
+    }
+
+    @media (min-width: 900px) {
+      .section-inner { max-width: 960px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-brand">
+      <div class="nav-logo">P</div>
+      <span class="nav-name">ParentFlare</span>
+    </a>
+    <a href="https://parentflare.vercel.app" class="nav-cta">Open the App</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="flare-container">
+      <div class="flare f1"></div>
+      <div class="flare f2"></div>
+      <div class="flare f3"></div>
+      <div class="flare f4"></div>
+      <div class="flare f5"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-logo">P</div>
+      <h1>Make parenting doable.</h1>
+      <p class="hero-tagline">You don't need another parenting book. You need the right idea at the right moment. ParentFlare gives you activities, scripts, and coaching — powered by AI, grounded in child development.</p>
+      <a href="https://parentflare.vercel.app" class="hero-cta">
+        Try It Free →
+      </a>
+      <p class="hero-sub">No account needed. Works on any device.</p>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem">
+    <div class="section-inner">
+      <div class="section-label fade-up">Sound familiar?</div>
+      <h2 class="section-title fade-up">The moments no one prepares you for.</h2>
+      <p class="section-desc fade-up">Not the big milestones. The Tuesday at 5:30pm moments. The ones where you're out of ideas, out of patience, and reaching for the iPad because you don't know what else to do.</p>
+
+      <div class="problem-moments">
+        <div class="moment-card fade-up">
+          <div class="moment-time">5:47 PM · Tuesday</div>
+          <p>"Dinner's in 20 minutes. They're whining. I have nothing."</p>
+        </div>
+        <div class="moment-card fade-up">
+          <div class="moment-time">3:12 PM · Saturday</div>
+          <p>"It's raining. We've been inside all day. Everyone's losing it."</p>
+        </div>
+        <div class="moment-card fade-up">
+          <div class="moment-time">7:38 PM · Wednesday</div>
+          <p>"Bedtime in 20 minutes and they are completely wired."</p>
+        </div>
+        <div class="moment-card fade-up">
+          <div class="moment-time">10:15 AM · Sunday</div>
+          <p>"They just hit their sibling and I froze. I didn't know what to say."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="section-inner">
+      <div class="section-label fade-up">Three tools, one app</div>
+      <h2 class="section-title fade-up">Help is on the way.</h2>
+      <p class="section-desc fade-up">Send up the flare. Whether you need an activity, a custom solution, or the exact words to say — we've got you.</p>
+
+      <div class="feature-grid">
+        <div class="feature-card card-ideas fade-up">
+          <div class="feature-icon">🎯</div>
+          <h3>Give me ideas</h3>
+          <p>85+ curated activities organized by scenario and age. Screen-free, low-prep, backed by child development research. Just tap and go.</p>
+        </div>
+        <div class="feature-card card-magic fade-up">
+          <div class="feature-icon">🪄</div>
+          <h3>Make me one</h3>
+          <p>Describe your exact moment — the age, the mood, the chaos. AI creates a custom activity with steps, a script, and a "why this works" explanation.</p>
+        </div>
+        <div class="feature-card card-words fade-up">
+          <div class="feature-icon">💬</div>
+          <h3>Find the words</h3>
+          <p>Hard parenting moment? Get the exact words to say to your child — calm, developmentally grounded, and specific to your situation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="section-inner">
+      <div class="section-label fade-up">No learning curve</div>
+      <h2 class="section-title fade-up">From chaos to calm in 30 seconds.</h2>
+
+      <div class="steps">
+        <div class="step fade-up">
+          <div class="step-number">1</div>
+          <div>
+            <h3>Pick your child's age</h3>
+            <p>Toddler, Little Kid, or Big Kid. Everything adapts to their developmental stage.</p>
+          </div>
+        </div>
+        <div class="step fade-up">
+          <div class="step-number">2</div>
+          <div>
+            <h3>Choose what you need</h3>
+            <p>Browse curated activities, generate a custom one, or get a coaching script for a hard moment.</p>
+          </div>
+        </div>
+        <div class="step fade-up">
+          <div class="step-number">3</div>
+          <div>
+            <h3>Use it right now</h3>
+            <p>Every activity includes steps, a "what to say" script, and a "why this works" explanation. No prep, no guessing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="proof">
+    <div class="section-inner">
+      <div class="section-label fade-up">From real parents</div>
+      <h2 class="section-title fade-up">They tried it. Here's what happened.</h2>
+
+      <div class="quote-grid">
+        <div class="quote-card fade-up">
+          <div class="stars">★★★★★</div>
+          <blockquote>"My 3-year-old was melting down at the grocery store. I pulled up ParentFlare, got a script, said the words, and she actually calmed down. I almost cried in the cereal aisle."</blockquote>
+          <div class="attribution">— Parent of a toddler</div>
+        </div>
+        <div class="quote-card fade-up">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Saturday mornings used to be 'here's the iPad.' Now I open ParentFlare and we actually do something together. My kids ask for it."</blockquote>
+          <div class="attribution">— Dad of two, ages 5 & 8</div>
+        </div>
+        <div class="quote-card fade-up">
+          <div class="stars">★★★★★</div>
+          <blockquote>"The 'what to say' feature is worth the entire app. I used to freeze when my son hit his sister. Now I have the words."</blockquote>
+          <div class="attribution">— Mom of three</div>
+        </div>
+        <div class="quote-card fade-up">
+          <div class="stars">★★★★★</div>
+          <blockquote>"I described 'bedtime, two boys, totally wired' and it gave me a game that had them both calm in 10 minutes. Magic."</blockquote>
+          <div class="attribution">— Parent of boys, 4 & 6</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL CAPTURE -->
+  <section class="capture" id="download">
+    <div class="flare-container">
+      <div class="flare f1"></div>
+      <div class="flare f3"></div>
+      <div class="flare f5"></div>
+    </div>
+    <div class="section-inner">
+      <div class="capture-box fade-up">
+        <h3>The 5 Scripts Every Parent Needs</h3>
+        <p class="capture-sub">Free download — the exact words for the 5 hardest everyday parenting moments. Backed by child development research.</p>
+        <div class="capture-form" id="captureForm">
+          <input type="email" id="captureEmail" placeholder="your@email.com" required>
+          <button type="button" onclick="handleCapture()">Send It Free</button>
+        </div>
+        <div class="capture-success" id="captureSuccess">
+          <h4>Check your inbox! 🎉</h4>
+          <p>The 5 Scripts are on their way. While you wait, try the app:</p>
+          <a href="https://parentflare.vercel.app" style="display:inline-block;margin-top:16px;background:var(--flame);color:white;border-radius:14px;padding:14px 28px;font-size:16px;font-weight:600;text-decoration:none;">Open ParentFlare →</a>
+        </div>
+        <p class="capture-fine">No spam. Unsubscribe anytime. We respect your inbox.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section style="background:var(--cream);padding:80px 24px;text-align:center;">
+    <div class="section-inner">
+      <h2 class="section-title fade-up" style="margin-bottom:12px;">Send up the flare.</h2>
+      <p class="section-desc fade-up" style="margin:0 auto 32px;text-align:center;">We've got you.</p>
+      <a href="https://parentflare.vercel.app" class="hero-cta fade-up" style="display:inline-flex;">
+        Try ParentFlare Free →
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">ParentFlare</div>
+    <p class="footer-tagline">Make parenting doable.</p>
+    <div class="footer-links">
+      <a href="https://parentflare.vercel.app">Open the App</a>
+      <a href="#download">Get the Free Scripts</a>
+    </div>
+    <p class="copyright">© 2026 ParentFlare. Built by parents, for parents.</p>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Email capture
+    async function handleCapture() {
+      const email = document.getElementById('captureEmail').value.trim();
+      if (!email || !email.includes('@')) {
+        document.getElementById('captureEmail').style.borderColor = '#dc2626';
+        return;
+      }
+
+      const btn = document.querySelector('.capture-form button');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      try {
+        // Save to Supabase via API
+        await fetch('https://parentflare.vercel.app/api/capture-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source: 'landing_page_scripts' }),
+        });
+      } catch (e) {
+        // Silently fail — still show success
+      }
+
+      document.getElementById('captureForm').style.display = 'none';
+      document.getElementById('captureSuccess').style.display = 'block';
+      document.querySelector('.capture-fine').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
