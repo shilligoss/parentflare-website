@@ -68,11 +68,7 @@
       text-align: center;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 600px;
-    }
+    .hero-content { position: relative; z-index: 1; max-width: 600px; }
 
     .hero-logo {
       width: 72px; height: 72px;
@@ -85,697 +81,140 @@
       box-shadow: 0 0 30px rgba(255,107,53,0.4), 0 0 80px rgba(255,107,53,0.15);
     }
 
-    .hero h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: clamp(36px, 7vw, 56px);
-      font-weight: 800;
-      color: var(--charcoal);
-      line-height: 1.1;
-      margin-bottom: 16px;
-      letter-spacing: -1px;
-    }
-
-    .hero-tagline {
-      font-size: clamp(16px, 3vw, 20px);
-      font-weight: 500;
-      color: rgba(26,26,46,0.75);
-      line-height: 1.5;
-      margin-bottom: 36px;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    .hero h1 { font-family: 'Outfit', sans-serif; font-size: clamp(36px, 7vw, 56px); font-weight: 800; color: var(--charcoal); line-height: 1.1; margin-bottom: 16px; letter-spacing: -1px; }
+    .hero-tagline { font-size: clamp(16px, 3vw, 20px); font-weight: 500; color: rgba(26,26,46,0.75); line-height: 1.5; margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
 
     .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--charcoal);
-      color: white;
-      border: none;
-      border-radius: 16px;
-      padding: 18px 36px;
-      font-size: 18px;
-      font-weight: 600;
-      font-family: inherit;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.15s ease, box-shadow 0.2s ease;
-      box-shadow: 0 4px 20px rgba(26,26,46,0.25);
+      display: inline-flex; align-items: center; gap: 10px; background: var(--charcoal); color: white; border: none; border-radius: 16px; padding: 18px 36px; font-size: 18px; font-weight: 600; font-family: inherit; cursor: pointer; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.2s ease; box-shadow: 0 4px 20px rgba(26,26,46,0.25);
     }
     .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(26,26,46,0.3); }
     .hero-cta:active { transform: scale(0.97); }
-
-    .hero-sub {
-      margin-top: 16px;
-      font-size: 14px;
-      color: rgba(26,26,46,0.5);
-    }
+    .hero-sub { margin-top: 16px; font-size: 14px; color: rgba(26,26,46,0.5); }
 
     /* ---- SECTION BASE ---- */
     section { padding: 100px 24px; }
     .section-inner { max-width: 800px; margin: 0 auto; }
-
-    .section-label {
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--flame);
-      margin-bottom: 16px;
-    }
-
-    .section-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: clamp(28px, 5vw, 40px);
-      font-weight: 700;
-      line-height: 1.2;
-      color: var(--charcoal);
-      margin-bottom: 20px;
-      letter-spacing: -0.5px;
-    }
-
-    .section-desc {
-      font-size: 17px;
-      color: var(--warm-gray);
-      line-height: 1.7;
-      max-width: 560px;
-    }
+    .section-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--flame); margin-bottom: 16px; }
+    .section-title { font-family: 'Outfit', sans-serif; font-size: clamp(28px, 5vw, 40px); font-weight: 700; line-height: 1.2; color: var(--charcoal); margin-bottom: 20px; letter-spacing: -0.5px; }
+    .section-desc { font-size: 17px; color: var(--warm-gray); line-height: 1.7; max-width: 560px; }
 
     /* ---- PROBLEM ---- */
-    .problem {
-      background: var(--charcoal);
-      color: white;
-    }
+    .problem { background: var(--charcoal); color: white; }
     .problem .section-label { color: var(--flame-light); }
     .problem .section-title { color: white; }
     .problem .section-desc { color: rgba(255,255,255,0.65); }
-
-    .problem-moments {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      margin-top: 40px;
-    }
-
-    .moment-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 20px;
-      padding: 24px;
-    }
-
-    .moment-card .moment-time {
-      font-size: 13px;
-      color: var(--flame-light);
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .moment-card p {
-      font-size: 17px;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.6;
-      font-style: italic;
-    }
+    .problem-moments { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 40px; }
+    .moment-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 24px; }
+    .moment-card .moment-time { font-size: 13px; color: var(--flame-light); font-weight: 600; margin-bottom: 8px; }
+    .moment-card p { font-size: 17px; color: rgba(255,255,255,0.85); line-height: 1.6; font-style: italic; }
 
     /* ---- FEATURES ---- */
-    .features {
-      background: var(--warm-white);
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      margin-top: 48px;
-    }
-
-    .feature-card {
-      background: white;
-      border-radius: 24px;
-      padding: 32px 28px;
-      box-shadow: 0 2px 16px rgba(26,26,46,0.05);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+    .features { background: var(--warm-white); }
+    .feature-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 48px; }
+    .feature-card { background: white; border-radius: 24px; padding: 32px 28px; box-shadow: 0 2px 16px rgba(26,26,46,0.05); transition: transform 0.2s ease, box-shadow 0.2s ease; }
     .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(26,26,46,0.08); }
-
-    .feature-icon {
-      width: 56px; height: 56px;
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-
-    .feature-card h3 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 10px;
-      letter-spacing: -0.3px;
-    }
-
-    .feature-card p {
-      font-size: 15px;
-      color: var(--warm-gray);
-      line-height: 1.6;
-    }
-
+    .feature-icon { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px; }
+    .feature-card h3 { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.3px; }
+    .feature-card p { font-size: 15px; color: var(--warm-gray); line-height: 1.6; }
     .feature-card.card-ideas .feature-icon { background: linear-gradient(135deg, #FFF0E6, #ede5dc); }
-    .feature-card.card-magic .feature-icon { background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(124,58,237,0.06)); }
+    .feature-card.card-plan .feature-icon { background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(16,185,129,0.08)); }
     .feature-card.card-words .feature-icon { background: linear-gradient(135deg, rgba(37,99,235,0.12), rgba(37,99,235,0.06)); }
 
     /* ---- HOW IT WORKS ---- */
     .how-it-works { background: var(--cream); }
-
-    .steps {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0;
-      margin-top: 48px;
-      position: relative;
-    }
-
-    .step {
-      display: flex;
-      gap: 20px;
-      padding: 28px 0;
-      border-bottom: 1px solid #F0E8DC;
-    }
+    .steps { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 48px; position: relative; }
+    .step { display: flex; gap: 20px; padding: 28px 0; border-bottom: 1px solid #F0E8DC; }
     .step:last-child { border-bottom: none; }
-
-    .step-number {
-      width: 40px; height: 40px;
-      background: var(--flame);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 18px;
-      flex-shrink: 0;
-    }
-
-    .step h3 {
-      font-weight: 700;
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-
-    .step p {
-      font-size: 15px;
-      color: var(--warm-gray);
-      line-height: 1.6;
-    }
+    .step-number { width: 40px; height: 40px; background: var(--flame); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; flex-shrink: 0; }
+    .step h3 { font-weight: 700; font-size: 18px; margin-bottom: 6px; }
+    .step p { font-size: 15px; color: var(--warm-gray); line-height: 1.6; }
 
     /* ---- PRICING ---- */
     .pricing { background: var(--cream); }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      margin-top: 48px;
-      max-width: 700px;
-    }
-
-    .pricing-card {
-      background: white;
-      border-radius: 24px;
-      padding: 36px 28px;
-      box-shadow: 0 2px 16px rgba(26,26,46,0.05);
-      position: relative;
-    }
-
-    .pricing-card.featured {
-      border: 2px solid var(--purple);
-      box-shadow: 0 4px 24px rgba(124,58,237,0.12);
-    }
-
-    .pricing-badge {
-      position: absolute;
-      top: -12px;
-      left: 28px;
-      background: linear-gradient(135deg, var(--purple), #6d28d9);
-      color: white;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 4px 14px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .pricing-card h3 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 4px;
-      letter-spacing: -0.3px;
-    }
-
-    .pricing-price {
-      font-family: 'Outfit', sans-serif;
-      font-size: 40px;
-      font-weight: 800;
-      color: var(--charcoal);
-      margin: 16px 0 4px;
-      letter-spacing: -1px;
-    }
-
-    .pricing-price span {
-      font-size: 16px;
-      font-weight: 500;
-      color: var(--soft-gray);
-    }
-
-    .pricing-subtitle {
-      font-size: 14px;
-      color: var(--soft-gray);
-      margin-bottom: 20px;
-    }
-
-    .pricing-features {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 28px;
-    }
-
-    .pricing-features li {
-      font-size: 15px;
-      color: var(--warm-gray);
-      line-height: 1.6;
-      padding: 6px 0;
-      padding-left: 28px;
-      position: relative;
-    }
-
-    .pricing-features li::before {
-      content: '\2713';
-      position: absolute;
-      left: 0;
-      color: var(--teal);
-      font-weight: 700;
-    }
-
-    .pricing-cta {
-      display: inline-block;
-      width: 100%;
-      text-align: center;
-      padding: 16px;
-      border-radius: 14px;
-      border: none;
-      font-size: 16px;
-      font-weight: 600;
-      font-family: inherit;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.15s ease;
-    }
+    .pricing-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 48px; max-width: 700px; }
+    .pricing-card { background: white; border-radius: 24px; padding: 36px 28px; box-shadow: 0 2px 16px rgba(26,26,46,0.05); position: relative; }
+    .pricing-card.featured { border: 2px solid var(--purple); box-shadow: 0 4px 24px rgba(124,58,237,0.12); }
+    .pricing-badge { position: absolute; top: -12px; left: 28px; background: linear-gradient(135deg, var(--purple), #6d28d9); color: white; font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; }
+    .pricing-card h3 { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.3px; }
+    .pricing-price { font-family: 'Outfit', sans-serif; font-size: 40px; font-weight: 800; color: var(--charcoal); margin: 16px 0 4px; letter-spacing: -1px; }
+    .pricing-price span { font-size: 16px; font-weight: 500; color: var(--soft-gray); }
+    .pricing-subtitle { font-size: 14px; color: var(--soft-gray); margin-bottom: 20px; }
+    .pricing-features { list-style: none; padding: 0; margin: 0 0 28px; }
+    .pricing-features li { font-size: 15px; color: var(--warm-gray); line-height: 1.6; padding: 6px 0; padding-left: 28px; position: relative; }
+    .pricing-features li::before { content: '\2713'; position: absolute; left: 0; color: var(--teal); font-weight: 700; }
+    .pricing-cta { display: inline-block; width: 100%; text-align: center; padding: 16px; border-radius: 14px; border: none; font-size: 16px; font-weight: 600; font-family: inherit; cursor: pointer; text-decoration: none; transition: transform 0.15s ease; }
     .pricing-cta:hover { transform: translateY(-1px); }
-
-    .pricing-cta.cta-free {
-      background: white;
-      color: var(--charcoal);
-      border: 2px solid #EDE8E0;
-    }
-
-    .pricing-cta.cta-premium {
-      background: linear-gradient(135deg, var(--purple), #6d28d9);
-      color: white;
-      box-shadow: 0 4px 14px rgba(124,58,237,0.3);
-    }
-
-    .pricing-note {
-      font-size: 13px;
-      color: var(--soft-gray);
-      margin-top: 20px;
-      line-height: 1.6;
-    }
+    .pricing-cta.cta-free { background: white; color: var(--charcoal); border: 2px solid #EDE8E0; }
+    .pricing-cta.cta-premium { background: linear-gradient(135deg, var(--purple), #6d28d9); color: white; box-shadow: 0 4px 14px rgba(124,58,237,0.3); }
+    .pricing-note { font-size: 13px; color: var(--soft-gray); margin-top: 20px; line-height: 1.6; }
 
     /* ---- FAQ ---- */
     .faq { background: var(--warm-white); }
-
-    .faq-list {
-      margin-top: 48px;
-      display: grid;
-      gap: 0;
-    }
-
-    .faq-item {
-      padding: 28px 0;
-      border-bottom: 1px solid #EDE8E0;
-    }
+    .faq-list { margin-top: 48px; display: grid; gap: 0; }
+    .faq-item { padding: 28px 0; border-bottom: 1px solid #EDE8E0; }
     .faq-item:last-child { border-bottom: none; }
-
-    .faq-item h3 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--charcoal);
-      margin-bottom: 8px;
-      letter-spacing: -0.2px;
-    }
-
-    .faq-item p {
-      font-size: 15px;
-      color: var(--warm-gray);
-      line-height: 1.7;
-    }
-
-    /* ---- SOCIAL PROOF ---- */
-    .proof {
-      background: var(--warm-white);
-    }
-
-    .quote-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      margin-top: 40px;
-    }
-
-    .quote-card {
-      background: white;
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 2px 12px rgba(26,26,46,0.04);
-    }
-
-    .quote-card .stars {
-      color: #f59e0b;
-      font-size: 16px;
-      margin-bottom: 12px;
-      letter-spacing: 2px;
-    }
-
-    .quote-card blockquote {
-      font-size: 16px;
-      color: var(--charcoal);
-      line-height: 1.7;
-      margin-bottom: 16px;
-      font-style: italic;
-    }
-
-    .quote-card .attribution {
-      font-size: 14px;
-      color: var(--soft-gray);
-      font-weight: 600;
-    }
+    .faq-item h3 { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; letter-spacing: -0.2px; }
+    .faq-item p { font-size: 15px; color: var(--warm-gray); line-height: 1.7; }
 
     /* ---- EMAIL CAPTURE ---- */
-    .capture {
-      position: relative;
-      background: linear-gradient(160deg, #ffc4a3 0%, #ff9a76 35%, #e8845a 60%, #7eb6d9 100%);
-      text-align: center;
-      overflow: hidden;
-    }
-
+    .capture { position: relative; background: linear-gradient(160deg, #ffc4a3 0%, #ff9a76 35%, #e8845a 60%, #7eb6d9 100%); text-align: center; overflow: hidden; }
     .capture .section-title { color: var(--charcoal); }
-    .capture .section-desc {
-      color: rgba(26,26,46,0.7);
-      margin: 0 auto 32px;
-    }
-
-    .capture-box {
-      background: rgba(255,255,255,0.7);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-radius: 24px;
-      padding: 36px 28px;
-      max-width: 480px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .capture-box h3 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .capture-box .capture-sub {
-      font-size: 15px;
-      color: var(--warm-gray);
-      margin-bottom: 24px;
-      line-height: 1.5;
-    }
-
-    .capture-form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .capture-form input[type="email"] {
-      width: 100%;
-      padding: 16px 18px;
-      border-radius: 14px;
-      border: 2px solid #EBE0D2;
-      font-size: 16px;
-      font-family: inherit;
-      outline: none;
-      background: white;
-      color: var(--charcoal);
-      text-align: center;
-    }
+    .capture .section-desc { color: rgba(26,26,46,0.7); margin: 0 auto 32px; }
+    .capture-box { background: rgba(255,255,255,0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: 24px; padding: 36px 28px; max-width: 480px; margin: 0 auto; position: relative; z-index: 1; }
+    .capture-box h3 { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+    .capture-box .capture-sub { font-size: 15px; color: var(--warm-gray); margin-bottom: 24px; line-height: 1.5; }
+    .capture-form { display: flex; flex-direction: column; gap: 12px; }
+    .capture-form input[type="email"] { width: 100%; padding: 16px 18px; border-radius: 14px; border: 2px solid #EBE0D2; font-size: 16px; font-family: inherit; outline: none; background: white; color: var(--charcoal); text-align: center; }
     .capture-form input[type="email"]:focus { border-color: var(--flame); }
-
-    .capture-form button {
-      width: 100%;
-      padding: 16px;
-      border-radius: 14px;
-      border: none;
-      background: var(--charcoal);
-      color: white;
-      font-size: 17px;
-      font-weight: 600;
-      font-family: inherit;
-      cursor: pointer;
-      transition: transform 0.15s ease;
-      box-shadow: 0 4px 16px rgba(26,26,46,0.2);
-    }
+    .capture-form button { width: 100%; padding: 16px; border-radius: 14px; border: none; background: var(--charcoal); color: white; font-size: 17px; font-weight: 600; font-family: inherit; cursor: pointer; transition: transform 0.15s ease; box-shadow: 0 4px 16px rgba(26,26,46,0.2); }
     .capture-form button:hover { transform: translateY(-1px); }
     .capture-form button:active { transform: scale(0.97); }
-
-    .capture-fine {
-      font-size: 12px;
-      color: rgba(26,26,46,0.4);
-      margin-top: 12px;
-    }
-
-    .capture-success {
-      display: none;
-      text-align: center;
-      padding: 20px 0;
-    }
-
-    .capture-success h4 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .capture-success p {
-      font-size: 15px;
-      color: var(--warm-gray);
-    }
+    .capture-fine { font-size: 12px; color: rgba(26,26,46,0.4); margin-top: 12px; }
+    .capture-success { display: none; text-align: center; padding: 20px 0; }
+    .capture-success h4 { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .capture-success p { font-size: 15px; color: var(--warm-gray); }
 
     /* ---- LEGAL PAGES ---- */
-    .legal {
-      background: var(--warm-white);
-      padding: 80px 24px;
-    }
-
-    .legal .section-inner {
-      max-width: 720px;
-    }
-
-    .legal h2 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--charcoal);
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
-    }
-
-    .legal .legal-updated {
-      font-size: 13px;
-      color: var(--soft-gray);
-      margin-bottom: 32px;
-    }
-
-    .legal h3 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--charcoal);
-      margin: 28px 0 10px;
-      letter-spacing: -0.2px;
-    }
-
-    .legal p {
-      font-size: 15px;
-      color: var(--warm-gray);
-      line-height: 1.8;
-      margin-bottom: 12px;
-    }
-
-    .legal a {
-      color: var(--flame);
-      text-decoration: none;
-    }
+    .legal { background: var(--warm-white); padding: 80px 24px; }
+    .legal .section-inner { max-width: 720px; }
+    .legal h2 { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; letter-spacing: -0.5px; }
+    .legal .legal-updated { font-size: 13px; color: var(--soft-gray); margin-bottom: 32px; }
+    .legal h3 { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 700; color: var(--charcoal); margin: 28px 0 10px; letter-spacing: -0.2px; }
+    .legal p { font-size: 15px; color: var(--warm-gray); line-height: 1.8; margin-bottom: 12px; }
+    .legal a { color: var(--flame); text-decoration: none; }
     .legal a:hover { text-decoration: underline; }
-
-    .legal-divider {
-      border: none;
-      border-top: 1px solid #EDE8E0;
-      margin: 60px 0;
-    }
+    .legal-divider { border: none; border-top: 1px solid #EDE8E0; margin: 60px 0; }
 
     /* ---- FOOTER ---- */
-    footer {
-      background: var(--charcoal);
-      color: rgba(255,255,255,0.5);
-      padding: 48px 24px;
-      text-align: center;
-    }
-
-    .footer-logo {
-      font-family: 'Outfit', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 8px;
-    }
-
-    .footer-tagline {
-      font-size: 14px;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 24px;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: rgba(255,255,255,0.5);
-      text-decoration: none;
-      font-size: 14px;
-      transition: color 0.2s;
-    }
+    footer { background: var(--charcoal); color: rgba(255,255,255,0.5); padding: 48px 24px; text-align: center; }
+    .footer-logo { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; color: white; margin-bottom: 8px; }
+    .footer-tagline { font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 24px; }
+    .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 16px; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 14px; transition: color 0.2s; }
     .footer-links a:hover { color: white; }
-
-    .footer-contact {
-      font-size: 13px;
-      color: rgba(255,255,255,0.35);
-      margin-bottom: 16px;
-    }
-
-    .footer-contact a {
-      color: rgba(255,255,255,0.5);
-      text-decoration: none;
-    }
+    .footer-contact { font-size: 13px; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+    .footer-contact a { color: rgba(255,255,255,0.5); text-decoration: none; }
     .footer-contact a:hover { color: white; }
-
-    footer .copyright {
-      font-size: 13px;
-      color: rgba(255,255,255,0.25);
-    }
+    footer .copyright { font-size: 13px; color: rgba(255,255,255,0.25); }
 
     /* ---- NAV ---- */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: 16px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .nav.scrolled {
-      background: rgba(250,248,245,0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 1px 8px rgba(26,26,46,0.06);
-    }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-
-    .nav-logo {
-      width: 36px; height: 36px;
-      background: #1A1A2E;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .nav-name {
-      font-family: 'Outfit', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--charcoal);
-    }
-
-    .nav-cta {
-      background: var(--flame);
-      color: white;
-      border: none;
-      border-radius: 12px;
-      padding: 10px 20px;
-      font-size: 14px;
-      font-weight: 600;
-      font-family: inherit;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.15s ease;
-    }
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; transition: background 0.3s ease, box-shadow 0.3s ease; }
+    .nav.scrolled { background: rgba(250,248,245,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 1px 8px rgba(26,26,46,0.06); }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo { width: 36px; height: 36px; background: #1A1A2E; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .nav-name { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 700; color: var(--charcoal); }
+    .nav-cta { background: var(--flame); color: white; border: none; border-radius: 12px; padding: 10px 20px; font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer; text-decoration: none; transition: transform 0.15s ease; }
     .nav-cta:hover { transform: translateY(-1px); }
 
     /* ---- ANIMATIONS ---- */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
 
     /* ---- RESPONSIVE ---- */
     @media (min-width: 640px) {
       .problem-moments { grid-template-columns: 1fr 1fr; }
       .feature-grid { grid-template-columns: 1fr 1fr 1fr; }
-      .quote-grid { grid-template-columns: 1fr 1fr; }
       .pricing-grid { grid-template-columns: 1fr 1fr; }
       .capture-form { flex-direction: row; }
       .capture-form input[type="email"] { text-align: left; flex: 1; }
@@ -803,11 +242,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="flare-container">
-      <div class="flare f1"></div>
-      <div class="flare f2"></div>
-      <div class="flare f3"></div>
-      <div class="flare f4"></div>
-      <div class="flare f5"></div>
+      <div class="flare f1"></div><div class="flare f2"></div><div class="flare f3"></div><div class="flare f4"></div><div class="flare f5"></div>
     </div>
     <div class="hero-content">
       <div class="hero-logo">
@@ -826,24 +261,11 @@
       <div class="section-label fade-up">Sound familiar?</div>
       <h2 class="section-title fade-up">The moments no one prepares you for.</h2>
       <p class="section-desc fade-up">Not the big milestones. The Tuesday at 5:30pm moments. The ones where you're out of ideas, out of patience, and reaching for the iPad because you don't know what else to do.</p>
-
       <div class="problem-moments">
-        <div class="moment-card fade-up">
-          <div class="moment-time">5:47 PM &middot; Tuesday</div>
-          <p>"Dinner's in 20 minutes. They're whining. I have nothing."</p>
-        </div>
-        <div class="moment-card fade-up">
-          <div class="moment-time">3:12 PM &middot; Saturday</div>
-          <p>"It's raining. We've been inside all day. Everyone's losing it."</p>
-        </div>
-        <div class="moment-card fade-up">
-          <div class="moment-time">7:38 PM &middot; Wednesday</div>
-          <p>"Bedtime in 20 minutes and they are completely wired."</p>
-        </div>
-        <div class="moment-card fade-up">
-          <div class="moment-time">10:15 AM &middot; Sunday</div>
-          <p>"They just hit their sibling and I froze. I didn't know what to say."</p>
-        </div>
+        <div class="moment-card fade-up"><div class="moment-time">5:47 PM &middot; Tuesday</div><p>"Dinner's in 20 minutes. They're whining. I have nothing."</p></div>
+        <div class="moment-card fade-up"><div class="moment-time">3:12 PM &middot; Saturday</div><p>"It's raining. We've been inside all day. Everyone's losing it."</p></div>
+        <div class="moment-card fade-up"><div class="moment-time">7:38 PM &middot; Wednesday</div><p>"Bedtime in 20 minutes and they are completely wired."</p></div>
+        <div class="moment-card fade-up"><div class="moment-time">10:15 AM &middot; Sunday</div><p>"They just hit their sibling and I froze. I didn't know what to say."</p></div>
       </div>
     </div>
   </section>
@@ -851,25 +273,19 @@
   <!-- FEATURES -->
   <section class="features">
     <div class="section-inner">
-      <div class="section-label fade-up">Four tools, one app</div>
+      <div class="section-label fade-up">Three tools, one app</div>
       <h2 class="section-title fade-up">Help is on the way.</h2>
-      <p class="section-desc fade-up">Send up the flare. Whether you need an activity, a custom solution, a plan for the day, or the exact words to say &mdash; we've got you.</p>
-
+      <p class="section-desc fade-up">Send up the flare. Whether you need an activity, a plan for the day, or the exact words to say &mdash; we've got you.</p>
       <div class="feature-grid">
         <div class="feature-card card-ideas fade-up">
           <div class="feature-icon">&#127919;</div>
-          <h3>85+ ready-to-go activities</h3>
-          <p>Browse by category, time, prep level, and whether you want to play together or let them do it solo. Every activity includes step-by-step instructions, a script for what to say, and a "why it works" explanation grounded in child development.</p>
+          <h3>85+ activities &mdash; or let AI make you one</h3>
+          <p>Choose a curated activity filtered by age, time, and prep level &mdash; or describe your moment and our AI builds a custom one on the spot. Every activity comes with steps, a script for what to say, and a "why it works" explanation.</p>
         </div>
-        <div class="feature-card card-magic fade-up">
-          <div class="feature-icon">&#129668;</div>
-          <h3>Make me one</h3>
-          <p>Describe what's happening &mdash; "rainy day, kids are going stir crazy, I need 10 minutes to cook dinner" &mdash; and our AI builds a custom activity on the spot. Tailored to your child's age and your exact situation.</p>
-        </div>
-        <div class="feature-card card-magic fade-up">
-          <div class="feature-icon">&#128197;</div>
+        <div class="feature-card card-plan fade-up" style="border:2px solid #a7f3d0;background:linear-gradient(135deg, #f0fdf4, white);">
+          <div class="feature-icon">&#129517;</div>
           <h3>Plan my time</h3>
-          <p>Going somewhere? Got an open afternoon? Tell us where you are, how much time you have, and the vibe you're going for. We'll generate a sequenced plan of 3&ndash;4 activities &mdash; with timing, transitions, and what to bring. Like having a local parent friend who always knows what to do.</p>
+          <p>Going somewhere? Got an open afternoon? Tell us where you are, how much time you have, and the vibe you're going for. We'll build a custom plan of 3&ndash;4 activities with timing, transitions, and what to bring. Like having a parent friend who always knows what to do.</p>
         </div>
         <div class="feature-card card-words fade-up">
           <div class="feature-icon">&#128172;</div>
@@ -885,29 +301,10 @@
     <div class="section-inner">
       <div class="section-label fade-up">No learning curve</div>
       <h2 class="section-title fade-up">From chaos to calm in 30 seconds.</h2>
-
       <div class="steps">
-        <div class="step fade-up">
-          <div class="step-number">1</div>
-          <div>
-            <h3>Pick your child's age</h3>
-            <p>Toddler, Little Kid, or Big Kid. Everything adapts to their developmental stage.</p>
-          </div>
-        </div>
-        <div class="step fade-up">
-          <div class="step-number">2</div>
-          <div>
-            <h3>Choose what you need</h3>
-            <p>Browse curated activities, generate a custom one, or get a coaching script for a hard moment.</p>
-          </div>
-        </div>
-        <div class="step fade-up">
-          <div class="step-number">3</div>
-          <div>
-            <h3>Use it right now</h3>
-            <p>Every activity includes steps, a "what to say" script, and a "why this works" explanation. No prep, no guessing.</p>
-          </div>
-        </div>
+        <div class="step fade-up"><div class="step-number">1</div><div><h3>Pick your child's age</h3><p>Toddler, Little Kid, or Big Kid. Everything adapts to their developmental stage.</p></div></div>
+        <div class="step fade-up"><div class="step-number">2</div><div><h3>Choose what you need</h3><p>Browse curated activities, let AI build one for your moment, plan your afternoon, or get a coaching script for a hard moment.</p></div></div>
+        <div class="step fade-up"><div class="step-number">3</div><div><h3>Use it right now</h3><p>Every activity includes steps, a "what to say" script, and a "why this works" explanation. No prep, no guessing.</p></div></div>
       </div>
     </div>
   </section>
@@ -918,7 +315,6 @@
       <div class="section-label fade-up">Simple pricing</div>
       <h2 class="section-title fade-up">Start free. Upgrade when you're ready.</h2>
       <p class="section-desc fade-up">Every parent gets the full activity library and AI-powered tools for free. Premium unlocks follow-up conversations and our AI trip and day planner.</p>
-
       <div class="pricing-grid">
         <div class="pricing-card fade-up">
           <h3>Free</h3>
@@ -941,12 +337,11 @@
             <li>Everything in Free</li>
             <li>Follow-up AI conversations (up to 5 turns)</li>
             <li>Adjust activities and scripts in real time</li>
-            <li>Plan my time &mdash; sequenced AI plans for trips, weekends, and open afternoons</li>
+            <li>Plan my time &mdash; AI-powered plans for trips, weekends, and open afternoons</li>
           </ul>
           <a href="https://parentflare.vercel.app" class="pricing-cta cta-premium">Get Premium</a>
         </div>
       </div>
-
       <p class="pricing-note fade-up">Premium is billed monthly at $10.00 USD via Stripe. Cancel anytime from your account &mdash; no fees, no questions asked. Your access continues through the end of your billing period.</p>
     </div>
   </section>
@@ -956,70 +351,19 @@
     <div class="section-inner">
       <div class="section-label fade-up">Questions</div>
       <h2 class="section-title fade-up">Frequently asked questions</h2>
-
       <div class="faq-list">
-        <div class="faq-item fade-up">
-          <h3>What age range is this for?</h3>
-          <p>ParentFlare covers ages 2&ndash;11, split into three groups: Toddlers (2&ndash;4), Little Kids (5&ndash;7), and Big Kids (8&ndash;11). Activities and AI responses are tailored to your child's age group.</p>
-        </div>
-        <div class="faq-item fade-up">
-          <h3>Do I need an account to use it?</h3>
-          <p>No. The free version works instantly &mdash; no sign-up, no account, no email required. Premium features require an email for billing through Stripe.</p>
-        </div>
-        <div class="faq-item fade-up">
-          <h3>What's the difference between free and Premium?</h3>
-          <p>Free gives you the full activity library plus single AI-generated activities and coaching scripts. Premium adds follow-up conversations so you can adjust results in real time, plus "Plan my time" &mdash; our AI trip and day planner that creates sequenced activity plans based on your location, time, and energy level.</p>
-        </div>
-        <div class="faq-item fade-up">
-          <h3>How is this different from other parenting apps?</h3>
-          <p>Most activity apps are designed for calm, planned moments &mdash; browsing Pinterest-style lists when you have time to prepare. ParentFlare is built for right now. You open it when you have unplanned time and need something immediately. No browsing, no saving for later, no prep lists. Just what to do and what to say, in seconds.</p>
-        </div>
-        <div class="faq-item fade-up">
-          <h3>Is my data safe?</h3>
-          <p>We don't sell your data. Email addresses are used only for Stripe billing. AI-generated content is not stored or used for training. See our full <a href="#privacy" style="color:var(--flame);text-decoration:none;">Privacy Policy</a> below.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOCIAL PROOF -->
-  <section class="proof">
-    <div class="section-inner">
-      <div class="section-label fade-up">From real parents</div>
-      <h2 class="section-title fade-up">They tried it. Here's what happened.</h2>
-
-      <div class="quote-grid">
-        <div class="quote-card fade-up">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <blockquote>"My 3-year-old was melting down at the grocery store. I pulled up ParentFlare, got a script, said the words, and she actually calmed down. I almost cried in the cereal aisle."</blockquote>
-          <div class="attribution">&mdash; Parent of a toddler</div>
-        </div>
-        <div class="quote-card fade-up">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <blockquote>"Saturday mornings used to be 'here's the iPad.' Now I open ParentFlare and we actually do something together. My kids ask for it."</blockquote>
-          <div class="attribution">&mdash; Dad of two, ages 5 &amp; 8</div>
-        </div>
-        <div class="quote-card fade-up">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <blockquote>"The 'what to say' feature is worth the entire app. I used to freeze when my son hit his sister. Now I have the words."</blockquote>
-          <div class="attribution">&mdash; Mom of three</div>
-        </div>
-        <div class="quote-card fade-up">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <blockquote>"I described 'bedtime, two boys, totally wired' and it gave me a game that had them both calm in 10 minutes. Magic."</blockquote>
-          <div class="attribution">&mdash; Parent of boys, 4 &amp; 6</div>
-        </div>
+        <div class="faq-item fade-up"><h3>What age range is this for?</h3><p>ParentFlare covers ages 2&ndash;11, split into three groups: Toddlers (2&ndash;4), Little Kids (5&ndash;7), and Big Kids (8&ndash;11). Activities and AI responses are tailored to your child's age group.</p></div>
+        <div class="faq-item fade-up"><h3>Do I need an account to use it?</h3><p>No. The free version works instantly &mdash; no sign-up, no account, no email required. Premium features require an email for billing through Stripe.</p></div>
+        <div class="faq-item fade-up"><h3>What's the difference between free and Premium?</h3><p>Free gives you the full activity library plus single AI-generated activities and coaching scripts. Premium adds follow-up conversations so you can adjust results in real time, plus "Plan my time" &mdash; our AI trip and day planner that creates custom activity plans based on your location, time, and energy level.</p></div>
+        <div class="faq-item fade-up"><h3>How is this different from other parenting apps?</h3><p>Most activity apps are designed for calm, planned moments &mdash; browsing Pinterest-style lists when you have time to prepare. ParentFlare is built for right now. You open it when you have unplanned time and need something immediately. No browsing, no saving for later, no prep lists. Just what to do and what to say, in seconds.</p></div>
+        <div class="faq-item fade-up"><h3>Is my data safe?</h3><p>We don't sell your data. Email addresses are used only for Stripe billing. AI-generated content is not stored or used for training. See our full <a href="#privacy" style="color:var(--flame);text-decoration:none;">Privacy Policy</a> below.</p></div>
       </div>
     </div>
   </section>
 
   <!-- EMAIL CAPTURE -->
   <section class="capture" id="download">
-    <div class="flare-container">
-      <div class="flare f1"></div>
-      <div class="flare f3"></div>
-      <div class="flare f5"></div>
-    </div>
+    <div class="flare-container"><div class="flare f1"></div><div class="flare f3"></div><div class="flare f5"></div></div>
     <div class="section-inner">
       <div class="capture-box fade-up">
         <h3>The 5 Scripts Every Parent Needs</h3>
@@ -1051,7 +395,7 @@
   <section class="legal" id="terms">
     <div class="section-inner">
       <h2>Terms of Service</h2>
-      <p class="legal-updated">Last updated: February 15, 2026</p>
+      <p class="legal-updated">Last updated: February 17, 2026</p>
 
       <h3>What ParentFlare Is</h3>
       <p>ParentFlare is a web-based application that provides parents with a curated activity library, an AI activity generator, AI coaching scripts, and an AI-powered trip and day planner (Plan my time). The service is available at <a href="https://parentflare.vercel.app">parentflare.vercel.app</a> and described at <a href="https://parentflare.com">parentflare.com</a>.</p>
@@ -1061,14 +405,14 @@
 
       <h3>Free and Premium Plans</h3>
       <p>ParentFlare offers a free tier that includes access to 85+ curated activities, AI-generated custom activities, and AI-generated coaching scripts. No account or payment is required to use the free tier.</p>
-      <p>ParentFlare Premium is an optional paid subscription at $10.00 USD per month. Premium adds follow-up AI conversations (up to 5 turns per session) for the activity generator and coaching script features, plus "Plan my time" &mdash; an AI-powered trip and day planner that creates sequenced activity plans. Premium subscriptions are processed securely through Stripe.</p>
+      <p>ParentFlare Premium is an optional paid subscription at $10.00 USD per month. Premium adds follow-up AI conversations (up to 5 turns per session) for the activity generator and coaching script features, plus "Plan my time" &mdash; an AI-powered trip and day planner that creates custom activity plans. Premium subscriptions are processed securely through Stripe.</p>
 
       <h3>Billing and Cancellation</h3>
       <p>Premium subscriptions are billed monthly on the date you subscribe. You may cancel your subscription at any time through your Stripe Customer Portal (accessible via the "Premium" badge in the app). When you cancel, your Premium access continues until the end of your current billing period. There are no cancellation fees, no long-term commitments, and no questions asked.</p>
       <p>Because ParentFlare Premium provides immediate access to AI-generated content upon subscription, refunds are generally not provided for partial billing periods. If you experience a technical issue that prevents you from using Premium features, please contact us at <a href="mailto:hello@parentflare.com">hello@parentflare.com</a> and we will make it right.</p>
 
       <h3>AI-Generated Content</h3>
-      <p>The "Make me one" and "Find the words" features use AI (powered by Anthropic's Claude) to generate custom activities and parenting scripts. AI-generated content is provided as suggestions only. You know your child best &mdash; always use your own judgment before applying any suggestion. ParentFlare is not responsible for outcomes resulting from the use of AI-generated content.</p>
+      <p>The "Make me one," "Plan my time," and "Find the words" features use AI (powered by Anthropic's Claude) to generate custom activities, plans, and parenting scripts. AI-generated content is provided as suggestions only. You know your child best &mdash; always use your own judgment before applying any suggestion. ParentFlare is not responsible for outcomes resulting from the use of AI-generated content.</p>
 
       <h3>Use of the Service</h3>
       <p>You agree to use ParentFlare for its intended purpose: helping parents find activities and parenting approaches for their children. You may not use the service for any unlawful purpose or in any way that could harm the service or other users.</p>
@@ -1082,7 +426,7 @@
       <hr class="legal-divider">
 
       <h2 id="privacy">Privacy Policy</h2>
-      <p class="legal-updated">Last updated: February 15, 2026</p>
+      <p class="legal-updated">Last updated: February 17, 2026</p>
 
       <h3>What We Collect</h3>
       <p>ParentFlare collects minimal data to provide and improve the service.</p>
@@ -1126,45 +470,21 @@
   </footer>
 
   <script>
-    // Nav scroll effect
     const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    });
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
 
-    // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // Email capture
     async function handleCapture() {
       const email = document.getElementById('captureEmail').value.trim();
-      if (!email || !email.includes('@')) {
-        document.getElementById('captureEmail').style.borderColor = '#dc2626';
-        return;
-      }
-
+      if (!email || !email.includes('@')) { document.getElementById('captureEmail').style.borderColor = '#dc2626'; return; }
       const btn = document.querySelector('.capture-form button');
       btn.textContent = 'Sending...';
       btn.disabled = true;
-
-      try {
-        await fetch('https://parentflare.vercel.app/api/capture-email', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, source: 'landing_page_scripts' }),
-        });
-      } catch (e) {
-        // Silently fail — still show success
-      }
-
+      try { await fetch('https://parentflare.vercel.app/api/capture-email', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, source: 'landing_page_scripts' }) }); } catch (e) {}
       document.getElementById('captureForm').style.display = 'none';
       document.getElementById('captureSuccess').style.display = 'block';
       document.querySelector('.capture-fine').style.display = 'none';
