@@ -417,6 +417,36 @@
       line-height: 1.6;
     }
 
+    /* ---- FAQ ---- */
+    .faq { background: var(--warm-white); }
+
+    .faq-list {
+      margin-top: 48px;
+      display: grid;
+      gap: 0;
+    }
+
+    .faq-item {
+      padding: 28px 0;
+      border-bottom: 1px solid #EDE8E0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-item h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+      letter-spacing: -0.2px;
+    }
+
+    .faq-item p {
+      font-size: 15px;
+      color: var(--warm-gray);
+      line-height: 1.7;
+    }
+
     /* ---- SOCIAL PROOF ---- */
     .proof {
       background: var(--warm-white);
@@ -784,8 +814,8 @@
         <svg width="42" height="52" viewBox="0 0 80 100" fill="none"><defs><linearGradient id="heroFl" x1="20" y1="90" x2="55" y2="8" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B35"/><stop offset="70%" stop-color="#E83D5E"/><stop offset="100%" stop-color="#D62259"/></linearGradient></defs><path d="M40 4C40 4 16 32 16 52C16 66 24 78 36 83C31 74 29 64 36 52C43 40 47 32 40 16C50 30 64 42 64 58C64 72 54 83 40 88C58 83 68 70 68 52C68 30 40 4 40 4Z" fill="url(#heroFl)"/><ellipse cx="40" cy="62" rx="7" ry="6.5" fill="#FFD23F" opacity="0.9"/></svg>
       </div>
       <h1>Make parenting doable.</h1>
-      <p class="hero-tagline">You don't need another parenting book. You need the right idea at the right moment. ParentFlare gives you activities, scripts, and coaching &mdash; powered by AI, grounded in child development.</p>
-      <a href="https://parentflare.vercel.app" class="hero-cta">Try It Free &rarr;</a>
+      <p class="hero-tagline">Instant screen-free activities and AI-powered plans for the moments you didn't plan for. Saturday mornings, rainy afternoons, trips with kids &mdash; we've got you.</p>
+      <a href="https://parentflare.vercel.app" class="hero-cta">Try ParentFlare Free &rarr;</a>
       <p class="hero-sub">No account needed. Works on any device.</p>
     </div>
   </section>
@@ -821,25 +851,30 @@
   <!-- FEATURES -->
   <section class="features">
     <div class="section-inner">
-      <div class="section-label fade-up">Three tools, one app</div>
+      <div class="section-label fade-up">Four tools, one app</div>
       <h2 class="section-title fade-up">Help is on the way.</h2>
-      <p class="section-desc fade-up">Send up the flare. Whether you need an activity, a custom solution, or the exact words to say &mdash; we've got you.</p>
+      <p class="section-desc fade-up">Send up the flare. Whether you need an activity, a custom solution, a plan for the day, or the exact words to say &mdash; we've got you.</p>
 
       <div class="feature-grid">
         <div class="feature-card card-ideas fade-up">
           <div class="feature-icon">&#127919;</div>
-          <h3>Give me ideas</h3>
-          <p>85+ curated activities organized by scenario and age. Screen-free, low-prep, backed by child development research. Just tap and go.</p>
+          <h3>85+ ready-to-go activities</h3>
+          <p>Browse by category, time, prep level, and whether you want to play together or let them do it solo. Every activity includes step-by-step instructions, a script for what to say, and a "why it works" explanation grounded in child development.</p>
         </div>
         <div class="feature-card card-magic fade-up">
           <div class="feature-icon">&#129668;</div>
           <h3>Make me one</h3>
-          <p>Describe your exact moment &mdash; the age, the mood, the chaos. AI creates a custom activity with steps, a script, and a "why this works" explanation.</p>
+          <p>Describe what's happening &mdash; "rainy day, kids are going stir crazy, I need 10 minutes to cook dinner" &mdash; and our AI builds a custom activity on the spot. Tailored to your child's age and your exact situation.</p>
+        </div>
+        <div class="feature-card card-magic fade-up">
+          <div class="feature-icon">&#128197;</div>
+          <h3>Plan my time</h3>
+          <p>Going somewhere? Got an open afternoon? Tell us where you are, how much time you have, and the vibe you're going for. We'll generate a sequenced plan of 3&ndash;4 activities &mdash; with timing, transitions, and what to bring. Like having a local parent friend who always knows what to do.</p>
         </div>
         <div class="feature-card card-words fade-up">
           <div class="feature-icon">&#128172;</div>
           <h3>Find the words</h3>
-          <p>Hard parenting moment? Get the exact words to say to your child &mdash; calm, developmentally grounded, and specific to your situation.</p>
+          <p>For the hard moments &mdash; hitting, meltdowns, "I hate you" &mdash; get the exact words to say right now. Each script includes what to say, why it works, and what to avoid saying. Calm, practical, no judgment.</p>
         </div>
       </div>
     </div>
@@ -882,7 +917,7 @@
     <div class="section-inner">
       <div class="section-label fade-up">Simple pricing</div>
       <h2 class="section-title fade-up">Start free. Upgrade when you're ready.</h2>
-      <p class="section-desc fade-up">Every parent gets full access to our curated activity library and AI-powered tools. Premium unlocks ongoing conversation with the AI for deeper, personalized support.</p>
+      <p class="section-desc fade-up">Every parent gets the full activity library and AI-powered tools for free. Premium unlocks follow-up conversations and our AI trip and day planner.</p>
 
       <div class="pricing-grid">
         <div class="pricing-card fade-up">
@@ -891,10 +926,9 @@
           <div class="pricing-subtitle">No account needed</div>
           <ul class="pricing-features">
             <li>85+ curated screen-free activities</li>
-            <li>Filter by age, scenario, and time</li>
-            <li>AI-generated custom activities</li>
-            <li>AI coaching scripts for hard moments</li>
-            <li>Works on any device, instantly</li>
+            <li>Filter by age, time, prep, and involvement</li>
+            <li>AI-generated custom activities (single result)</li>
+            <li>AI-generated coaching scripts (single result)</li>
           </ul>
           <a href="https://parentflare.vercel.app" class="pricing-cta cta-free">Try It Free</a>
         </div>
@@ -906,16 +940,45 @@
           <ul class="pricing-features">
             <li>Everything in Free</li>
             <li>Follow-up AI conversations (up to 5 turns)</li>
-            <li>Adjust activities in real time</li>
-            <li>Ask "what if they..." follow-ups to coaching</li>
-            <li>Plan my time &mdash; AI-powered activity plans for trips, weekends, and open afternoons</li>
-            <li>Support ParentFlare's development</li>
+            <li>Adjust activities and scripts in real time</li>
+            <li>Plan my time &mdash; sequenced AI plans for trips, weekends, and open afternoons</li>
           </ul>
           <a href="https://parentflare.vercel.app" class="pricing-cta cta-premium">Get Premium</a>
         </div>
       </div>
 
-      <p class="pricing-note fade-up">Premium subscriptions are billed monthly at $10.00 USD via Stripe. You can cancel anytime from your account &mdash; no cancellation fees, no questions asked. Your access continues until the end of your billing period.</p>
+      <p class="pricing-note fade-up">Premium is billed monthly at $10.00 USD via Stripe. Cancel anytime from your account &mdash; no fees, no questions asked. Your access continues through the end of your billing period.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="section-inner">
+      <div class="section-label fade-up">Questions</div>
+      <h2 class="section-title fade-up">Frequently asked questions</h2>
+
+      <div class="faq-list">
+        <div class="faq-item fade-up">
+          <h3>What age range is this for?</h3>
+          <p>ParentFlare covers ages 2&ndash;11, split into three groups: Toddlers (2&ndash;4), Little Kids (5&ndash;7), and Big Kids (8&ndash;11). Activities and AI responses are tailored to your child's age group.</p>
+        </div>
+        <div class="faq-item fade-up">
+          <h3>Do I need an account to use it?</h3>
+          <p>No. The free version works instantly &mdash; no sign-up, no account, no email required. Premium features require an email for billing through Stripe.</p>
+        </div>
+        <div class="faq-item fade-up">
+          <h3>What's the difference between free and Premium?</h3>
+          <p>Free gives you the full activity library plus single AI-generated activities and coaching scripts. Premium adds follow-up conversations so you can adjust results in real time, plus "Plan my time" &mdash; our AI trip and day planner that creates sequenced activity plans based on your location, time, and energy level.</p>
+        </div>
+        <div class="faq-item fade-up">
+          <h3>How is this different from other parenting apps?</h3>
+          <p>Most activity apps are designed for calm, planned moments &mdash; browsing Pinterest-style lists when you have time to prepare. ParentFlare is built for right now. You open it when you have unplanned time and need something immediately. No browsing, no saving for later, no prep lists. Just what to do and what to say, in seconds.</p>
+        </div>
+        <div class="faq-item fade-up">
+          <h3>Is my data safe?</h3>
+          <p>We don't sell your data. Email addresses are used only for Stripe billing. AI-generated content is not stored or used for training. See our full <a href="#privacy" style="color:var(--flame);text-decoration:none;">Privacy Policy</a> below.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -991,14 +1054,14 @@
       <p class="legal-updated">Last updated: February 15, 2026</p>
 
       <h3>What ParentFlare Is</h3>
-      <p>ParentFlare is a web-based application that provides parents with curated screen-free activities, AI-generated custom activities, and AI-generated parenting scripts for everyday moments. The service is available at <a href="https://parentflare.vercel.app">parentflare.vercel.app</a> and described at <a href="https://parentflare.com">parentflare.com</a>.</p>
+      <p>ParentFlare is a web-based application that provides parents with a curated activity library, an AI activity generator, AI coaching scripts, and an AI-powered trip and day planner (Plan my time). The service is available at <a href="https://parentflare.vercel.app">parentflare.vercel.app</a> and described at <a href="https://parentflare.com">parentflare.com</a>.</p>
 
       <h3>What ParentFlare Is Not</h3>
       <p>ParentFlare is not a medical, therapeutic, psychological, or clinical service. The activities and parenting scripts provided are general suggestions based on common child development principles. They are not a substitute for professional advice from a pediatrician, therapist, psychologist, or other licensed healthcare provider. If your child has specific medical, behavioral, or developmental needs, please consult a qualified professional.</p>
 
       <h3>Free and Premium Plans</h3>
       <p>ParentFlare offers a free tier that includes access to 85+ curated activities, AI-generated custom activities, and AI-generated coaching scripts. No account or payment is required to use the free tier.</p>
-      <p>ParentFlare Premium is an optional paid subscription at $10.00 USD per month. Premium adds follow-up AI conversations (up to 5 turns per session) for both the activity generator and the coaching script features. Premium subscriptions are processed securely through Stripe.</p>
+      <p>ParentFlare Premium is an optional paid subscription at $10.00 USD per month. Premium adds follow-up AI conversations (up to 5 turns per session) for the activity generator and coaching script features, plus "Plan my time" &mdash; an AI-powered trip and day planner that creates sequenced activity plans. Premium subscriptions are processed securely through Stripe.</p>
 
       <h3>Billing and Cancellation</h3>
       <p>Premium subscriptions are billed monthly on the date you subscribe. You may cancel your subscription at any time through your Stripe Customer Portal (accessible via the "Premium" badge in the app). When you cancel, your Premium access continues until the end of your current billing period. There are no cancellation fees, no long-term commitments, and no questions asked.</p>
