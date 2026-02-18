@@ -471,5 +471,54 @@
   </footer>
 
   <script>
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60);
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function() { nav.classList.toggle('scrolled', window.scrollY > 60); });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var els = document.querySelectorAll('.fade-up');
+      els.forEach(function(el) { el.classList.add('waiting'); });
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('waiting');
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      els.forEach(function(el) { observer.observe(el); });
+    });
+
+    async function handleCapture() {
+      var email = document.getElementById('captureEmail').value.trim();
+      if (!email || email.indexOf('@') === -1) {
+        document.getElementById('captureEmail').style.borderColor = '#e53e3e';
+        return;
+      }
+      var btn = document.querySelector('#captureForm button');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        var formBody = 'email=' + encodeURIComponent(email) + '&source=' + encodeURIComponent('website-5-scripts') + '&userGroup=' + encodeURIComponent('5 Scripts Download');
+        await fetch('https://app.loops.so/api/newsletter-form/cmlpp1etd0wnp0i0gwiqc09s1', {
+          method: 'POST',
+          body: formBody,
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        });
+        document.getElementById('captureForm').style.display = 'none';
+        document.querySelector('.capture-fine').style.display = 'none';
+        document.getElementById('captureSuccess').style.display = 'block';
+        window.open('https://parentflare.com/5-scripts-every-parent-needs.pdf', '_blank');
+      } catch (err) {
+        console.error('Capture error:', err);
+        btn.textContent = 'Try again';
+        btn.disabled = false;
+      }
+    }
+
+    document.getElementById('captureEmail').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') handleCapture();
+    });
+  </script>
+</body>
+</html>
