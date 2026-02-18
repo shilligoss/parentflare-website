@@ -173,6 +173,10 @@
     .capture-success { display: none; text-align: center; padding: 20px 0; }
     .capture-success h4 { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 8px; }
     .capture-success p { font-size: 15px; color: var(--warm-gray); }
+    .age-selector { margin-bottom: 4px; }
+    .age-btn { flex: 1; padding: 12px 8px; border-radius: 12px; border: 2px solid #EBE0D2; background: white; color: var(--charcoal); font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.15s ease; }
+    .age-btn:hover { border-color: var(--flame); }
+    .age-btn.selected { background: var(--flame); color: white; border-color: var(--flame); }
 
     /* ---- LEGAL PAGES ---- */
     .legal { background: var(--warm-white); padding: 80px 24px; }
@@ -367,16 +371,24 @@
     <div class="flare-container"><div class="flare f1"></div><div class="flare f3"></div><div class="flare f5"></div></div>
     <div class="section-inner">
       <div class="capture-box fade-up">
-        <h3>The 5 Scripts Every Parent Needs</h3>
-        <p class="capture-sub">Free download &mdash; the exact words for the 5 hardest everyday parenting moments. Backed by child development research.</p>
-        <div class="capture-form" id="captureForm">
+        <h3>Your first custom plan is free.</h3>
+        <p class="capture-sub">Tell us your kid's age and we'll build a personalized plan for your weekend. No account needed.</p>
+        <div class="capture-form" id="captureForm" style="flex-direction:column;">
+          <div class="age-selector" id="ageSelector">
+            <label style="font-size:13px;font-weight:600;color:var(--charcoal);margin-bottom:4px;display:block;">My kid is...</label>
+            <div style="display:flex;gap:8px;">
+              <button type="button" class="age-btn" data-age="toddler" onclick="selectAge('toddler')">Ages 2–4</button>
+              <button type="button" class="age-btn" data-age="little_kid" onclick="selectAge('little_kid')">Ages 5–7</button>
+              <button type="button" class="age-btn" data-age="big_kid" onclick="selectAge('big_kid')">Ages 8–11</button>
+            </div>
+          </div>
           <input type="email" id="captureEmail" placeholder="your@email.com" required>
-          <button type="button" onclick="handleCapture()">Send It Free</button>
+          <button type="button" onclick="handleCapture()">Get My Plan &rarr;</button>
         </div>
         <div class="capture-success" id="captureSuccess">
-          <h4>Check your inbox! &#127881;</h4>
-          <p>The 5 Scripts are on their way. While you wait, try the app:</p>
-          <a href="https://parentflare.vercel.app" style="display:inline-block;margin-top:16px;background:var(--flame);color:white;border-radius:14px;padding:14px 28px;font-size:16px;font-weight:600;text-decoration:none;">Open ParentFlare &rarr;</a>
+          <h4>Let's build your plan! &#127881;</h4>
+          <p>Opening ParentFlare now &mdash; your free custom plan is waiting.</p>
+          <a id="captureAppLink" href="https://parentflare.vercel.app" style="display:inline-block;margin-top:16px;background:var(--flame);color:white;border-radius:14px;padding:14px 28px;font-size:16px;font-weight:600;text-decoration:none;">Open ParentFlare &rarr;</a>
         </div>
         <p class="capture-fine">No spam. Unsubscribe anytime. We respect your inbox.</p>
       </div>
@@ -433,13 +445,13 @@
       <p>ParentFlare collects minimal data to provide and improve the service.</p>
       <p><strong>Free users:</strong> We do not require an account or collect personal information to use the free features. We use anonymous analytics (PostHog and Vercel Analytics) to understand how the app is used, such as which features are popular and where users encounter issues. This data does not identify you personally.</p>
       <p><strong>Premium subscribers:</strong> When you subscribe, we collect your email address to manage your subscription. Your email and payment information are processed and stored securely by Stripe. We store your email and subscription status in our database (hosted on Supabase) to verify your Premium access.</p>
-      <p><strong>Email capture:</strong> If you sign up to download the free "5 Scripts" PDF, we collect your email address. This is stored in our database and used only to deliver the PDF and occasional product updates.</p>
+      <p><strong>Email capture:</strong> If you sign up for a free custom plan, we collect your email address and your child's age range. This is stored in our database and used only to personalize your experience and send occasional product updates.</p>
 
       <h3>What We Don't Collect</h3>
       <p>We do not collect your children's names, ages, or personal information in any stored form. The age group you select in the app (Toddler, Little Kid, Big Kid) is stored locally on your device and is not sent to our servers. AI-generated content is not stored or associated with your identity.</p>
 
       <h3>How We Use Your Data</h3>
-      <p>Your email (if provided) is used to manage your Premium subscription, send you the free PDF download, and occasionally share product updates. We will never sell, rent, or share your personal information with third parties for marketing purposes.</p>
+      <p>Your email (if provided) is used to manage your Premium subscription, deliver your free custom plan, and occasionally share product updates. We will never sell, rent, or share your personal information with third parties for marketing purposes.</p>
 
       <h3>Third-Party Services</h3>
       <p>ParentFlare uses the following third-party services: <strong>Stripe</strong> for payment processing, <strong>Supabase</strong> for database hosting, <strong>Vercel</strong> for app hosting and analytics, <strong>PostHog</strong> for anonymous product analytics, <strong>Anthropic</strong> for AI-generated content (your prompts are sent to Anthropic's API to generate responses), and <strong>Google Fonts</strong> for typography. Each service's own privacy policy governs how they handle data.</p>
@@ -462,7 +474,7 @@
     <div class="footer-links">
       <a href="https://parentflare.vercel.app">Open the App</a>
       <a href="#pricing">Pricing</a>
-      <a href="#download">Free Scripts</a>
+      <a href="#download">Free Plan</a>
       <a href="#terms">Terms</a>
       <a href="#privacy">Privacy</a>
     </div>
@@ -489,26 +501,51 @@
       els.forEach(function(el) { observer.observe(el); });
     });
 
+    var selectedAge = null;
+
+    function selectAge(age) {
+      selectedAge = age;
+      var btns = document.querySelectorAll('.age-btn');
+      btns.forEach(function(btn) {
+        btn.classList.toggle('selected', btn.getAttribute('data-age') === age);
+      });
+    }
+
     async function handleCapture() {
       var email = document.getElementById('captureEmail').value.trim();
       if (!email || email.indexOf('@') === -1) {
         document.getElementById('captureEmail').style.borderColor = '#e53e3e';
         return;
       }
-      var btn = document.querySelector('#captureForm button');
-      btn.textContent = 'Sending...';
+      if (!selectedAge) {
+        var ageBtns = document.querySelectorAll('.age-btn');
+        ageBtns.forEach(function(btn) { btn.style.borderColor = '#e53e3e'; });
+        setTimeout(function() { ageBtns.forEach(function(btn) { btn.style.borderColor = '#EBE0D2'; }); }, 1500);
+        return;
+      }
+
+      var btn = document.querySelector('#captureForm button:last-child');
+      btn.textContent = 'Setting up...';
       btn.disabled = true;
+
       try {
-        var formBody = 'email=' + encodeURIComponent(email) + '&source=' + encodeURIComponent('website-5-scripts') + '&userGroup=' + encodeURIComponent('5 Scripts Download');
+        var ageLabels = { toddler: 'Ages 2-4', little_kid: 'Ages 5-7', big_kid: 'Ages 8-11' };
+        var formBody = 'email=' + encodeURIComponent(email) + '&source=' + encodeURIComponent('website-free-plan') + '&userGroup=' + encodeURIComponent('Free Plan') + '&ageGroup=' + encodeURIComponent(ageLabels[selectedAge]);
         await fetch('https://app.loops.so/api/newsletter-form/cmlpp1etd0wnp0i0gwiqc09s1', {
           method: 'POST',
           body: formBody,
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
         });
+
+        var appUrl = 'https://parentflare.vercel.app?source=website&plan=free&age=' + selectedAge;
+        document.getElementById('captureAppLink').href = appUrl;
+
         document.getElementById('captureForm').style.display = 'none';
         document.querySelector('.capture-fine').style.display = 'none';
         document.getElementById('captureSuccess').style.display = 'block';
-        window.open('https://parentflare.com/5-scripts-every-parent-needs.pdf', '_blank');
+
+        setTimeout(function() { window.open(appUrl, '_blank'); }, 800);
+
       } catch (err) {
         console.error('Capture error:', err);
         btn.textContent = 'Try again';
