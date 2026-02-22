@@ -120,37 +120,6 @@
     .feature-card.card-plan .feature-icon { background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(16,185,129,0.08)); }
     .feature-card.card-words .feature-icon { background: linear-gradient(135deg, rgba(37,99,235,0.12), rgba(37,99,235,0.06)); }
 
-    /* ---- PLAN DEMO VIDEO ---- */
-    .plan-demo { margin-top: 24px; display: flex; justify-content: center; }
-    .phone-frame {
-      position: relative;
-      width: 260px;
-      background: #1A1A2E;
-      border-radius: 32px;
-      padding: 12px;
-      box-shadow: 0 8px 40px rgba(26,26,46,0.2), 0 2px 12px rgba(16,185,129,0.1);
-    }
-    .phone-frame video {
-      width: 100%;
-      border-radius: 22px;
-      display: block;
-    }
-    .phone-notch {
-      position: absolute;
-      top: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 22px;
-      background: #1A1A2E;
-      border-radius: 0 0 14px 14px;
-      z-index: 2;
-    }
-
-    @media (min-width: 640px) {
-      .phone-frame { width: 280px; }
-    }
-
     /* ---- HOW IT WORKS ---- */
     .how-it-works { background: var(--cream); }
     .steps { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 48px; position: relative; }
@@ -299,14 +268,6 @@
           <div class="feature-icon">&#129517;</div>
           <h3>Plan my time</h3>
           <p>Going somewhere? Got an open afternoon? Tell us where you are, how much time you have, and the vibe you're going for. We'll build a custom plan of 3&ndash;4 activities with timing, transitions, and what to bring. Like having a parent friend who always knows what to do.</p>
-          <div class="plan-demo fade-up">
-            <div class="phone-frame">
-              <div class="phone-notch"></div>
-              <video autoplay muted loop playsinline preload="metadata">
-                <source src="/public/videos/plan-demo.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
         </div>
         <div class="feature-card card-words fade-up">
           <div class="feature-icon">&#128172;</div>
