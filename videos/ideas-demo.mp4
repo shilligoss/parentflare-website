@@ -1,0 +1,90 @@
+# Deploy Give me ideas Demo Video — Step-by-Step
+
+## Overview
+Add the trimmed ideas-demo.mp4 (29s, 3.2MB) to the "Give me ideas" feature card on parentflare.com, matching the phone mockup frame pattern used by Plan my time.
+
+---
+
+## Step 1: Upload the video file to staging branch
+
+Go to: **https://github.com/shilligoss/parentflare-website/new/staging/videos**
+
+- **File name:** `ideas-demo.mp4`
+- Click "uploading an existing file" link at the top
+- Drag/drop or select the `ideas-demo.mp4` file I gave you
+- Commit message: `Add Give me ideas demo video`
+- Make sure you're committing to the **staging** branch
+- Click "Commit changes"
+
+> If the `staging` branch doesn't exist yet, create it first:
+> Go to https://github.com/shilligoss/parentflare-website → click the branch dropdown → type `staging` → click "Create branch: staging from main"
+
+---
+
+## Step 2: Edit index.html on staging branch
+
+Go to: **https://github.com/shilligoss/parentflare-website/edit/staging/index.html**
+
+### Find this block (the "Give me ideas" feature card):
+
+```html
+        <div class="feature-card card-ideas fade-up">
+          <div class="feature-icon">&#127919;</div>
+          <h3>85+ activities &mdash; or we'll make you one</h3>
+          <p>Choose a curated activity filtered by age, time, and prep level &mdash; or describe your moment and we'll build a custom one on the spot. Every activity comes with steps, a script for what to say, and a "why it works" explanation.</p>
+        </div>
+```
+
+### Replace with:
+
+```html
+        <div class="feature-card card-ideas fade-up">
+          <div class="feature-icon">&#127919;</div>
+          <h3>85+ activities &mdash; or we'll make you one</h3>
+          <p>Choose a curated activity filtered by age, time, and prep level &mdash; or describe your moment and we'll build a custom one on the spot. Every activity comes with steps, a script for what to say, and a "why it works" explanation.</p>
+          <div class="phone-mockup-frame" style="margin-top:24px;">
+            <video autoplay muted loop playsinline preload="metadata" style="width:100%;border-radius:12px;display:block;">
+              <source src="/videos/ideas-demo.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+```
+
+- Commit message: `Add Give me ideas demo video to feature card`
+- Commit to **staging** branch
+
+---
+
+## Step 3: Verify on preview
+
+Vercel will auto-deploy the staging branch to a preview URL. Find it at:
+- https://vercel.com/dashboard → parentflare-website project → Deployments tab
+- Or check the GitHub commit for the deployment link
+
+**Check:**
+- Video plays automatically, muted, looped
+- Video is inside a phone-frame style container
+- Doesn't break the layout on mobile
+- Plan my time video still works too
+
+---
+
+## Step 4: Merge to production
+
+Go to: **https://github.com/shilligoss/parentflare-website/compare/main...staging**
+
+- Click "Create pull request"
+- Title: `Add Give me ideas demo video`
+- Click "Merge pull request"
+- Click "Confirm merge"
+
+Production (parentflare.com) updates automatically.
+
+---
+
+## Optional: Delete the old `public/videos/` folder
+
+Per your TODO list, if there's still a `public/videos/` folder in the repo from the old location, delete it. The videos now live at the root `/videos/` path.
+
+Go to: **https://github.com/shilligoss/parentflare-website/tree/main/public/videos**
+- If that folder exists, delete any files in it
