@@ -202,6 +202,8 @@
     .legal .legal-updated { font-size: 13px; color: var(--soft-gray); margin-bottom: 32px; }
     .legal h3 { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 700; color: var(--charcoal); margin: 28px 0 10px; letter-spacing: -0.2px; }
     .legal p { font-size: 15px; color: var(--warm-gray); line-height: 1.8; margin-bottom: 12px; }
+    .legal ul { margin: 0 0 12px 20px; }
+    .legal ul li { font-size: 15px; color: var(--warm-gray); line-height: 1.8; margin-bottom: 4px; }
     .legal a { color: var(--flame); text-decoration: none; }
     .legal a:hover { text-decoration: underline; }
     .legal-divider { border: none; border-top: 1px solid #EDE8E0; margin: 60px 0; }
@@ -388,10 +390,11 @@
       <h2 class="section-title fade-up">Frequently asked questions</h2>
       <div class="faq-list">
         <div class="faq-item fade-up"><h3>What age range is this for?</h3><p>ParentFlare covers ages 2&ndash;11, split into three groups: Toddlers (2&ndash;4), Little Kids (5&ndash;7), and Big Kids (8&ndash;11). Activities and personalized results are tailored to your child's age group.</p></div>
-        <div class="faq-item fade-up"><h3>Do I need an account to use it?</h3><p>No. The free version works instantly &mdash; no sign-up, no account, no email required. Premium features require an email for billing through Stripe.</p></div>
+        <div class="faq-item fade-up"><h3>Do I need an account to use it?</h3><p>No. The free version works instantly &mdash; no sign-up, no account, no email required. Creating an optional account (with Google or email) unlocks personalized suggestions based on your family profile. Premium features require an account for billing through Stripe.</p></div>
         <div class="faq-item fade-up"><h3>What's the difference between free and Premium?</h3><p>Free gives you the full activity library plus custom activities and coaching scripts (single results). Premium adds follow-up conversations so you can adjust results in real time, plus "Plan my time" &mdash; a personalized trip and day planner that creates custom activity plans based on your location, time, and energy level.</p></div>
+        <div class="faq-item fade-up"><h3>How does personalization work?</h3><p>When you create a free account, you can set up a family profile describing your parenting style, home environment, what supplies you have, and what generally works for your family. This context is sent to our AI so every suggestion is tailored to your actual situation &mdash; your space, your supplies, your kids' interests. No children's names or identifiable information is ever collected.</p></div>
         <div class="faq-item fade-up"><h3>How is this different from other parenting apps?</h3><p>Most activity apps are designed for calm, planned moments &mdash; browsing Pinterest-style lists when you have time to prepare. ParentFlare is built for right now. You open it when you have unplanned time and need something immediately. No browsing, no saving for later, no prep lists. Just what to do and what to say, in seconds.</p></div>
-        <div class="faq-item fade-up"><h3>Is my data safe?</h3><p>We don't sell your data. Email addresses are used only for Stripe billing. Your conversations and generated content are not stored or used for training. See our full <a href="#privacy" style="color:var(--flame);text-decoration:none;">Privacy Policy</a> below.</p></div>
+        <div class="faq-item fade-up"><h3>Is my data safe?</h3><p>We don't sell your data. We don't collect children's names or identifiable information. Your family profile data is used only to personalize your experience and is never shared with advertisers. See our full <a href="#privacy" style="color:var(--flame);text-decoration:none;">Privacy Policy</a> below.</p></div>
       </div>
     </div>
   </section>
@@ -409,24 +412,24 @@
   <section class="legal" id="terms">
     <div class="section-inner">
       <h2>Terms of Service</h2>
-      <p class="legal-updated">Last updated: February 17, 2026</p>
+      <p class="legal-updated">Last updated: February 22, 2026</p>
 
       <h3>What ParentFlare Is</h3>
-      <p>ParentFlare is a web-based application that provides parents with a curated activity library, an AI activity generator, AI coaching scripts, and an AI-powered trip and day planner (Plan my time). The service is available at <a href="https://parentflare.vercel.app">parentflare.vercel.app</a> and described at <a href="https://parentflare.com">parentflare.com</a>.</p>
+      <p>ParentFlare is a web-based application that provides parents with a curated activity library, a custom activity generator, coaching scripts, and a personalized trip and day planner (Plan my time). The service is available at <a href="https://parentflare.vercel.app">parentflare.vercel.app</a> and described at <a href="https://parentflare.com">parentflare.com</a>.</p>
 
       <h3>What ParentFlare Is Not</h3>
       <p>ParentFlare is not a medical, therapeutic, psychological, or clinical service. The activities and parenting scripts provided are general suggestions based on common child development principles. They are not a substitute for professional advice from a pediatrician, therapist, psychologist, or other licensed healthcare provider. If your child has specific medical, behavioral, or developmental needs, please consult a qualified professional.</p>
 
       <h3>Free and Premium Plans</h3>
-      <p>ParentFlare offers a free tier that includes access to 85+ curated activities, AI-generated custom activities, and AI-generated coaching scripts. No account or payment is required to use the free tier.</p>
-      <p>ParentFlare Premium is an optional paid subscription at $5.00 USD per month. Premium adds follow-up AI conversations (up to 5 turns per session) for the activity generator and coaching script features, plus "Plan my time" &mdash; an AI-powered trip and day planner that creates custom activity plans. Premium subscriptions are processed securely through Stripe.</p>
+      <p>ParentFlare offers a free tier that includes access to 85+ curated activities, custom activities, and coaching scripts. No account or payment is required to use the free tier. Creating an optional account enables personalized suggestions based on your family profile.</p>
+      <p>ParentFlare Premium is an optional paid subscription at $5.00 USD per month. Premium adds follow-up conversations (up to 5 turns per session) for the activity generator and coaching script features, plus "Plan my time" &mdash; a personalized trip and day planner that creates custom activity plans. Premium subscriptions are processed securely through Stripe.</p>
 
       <h3>Billing and Cancellation</h3>
-      <p>Premium subscriptions begin with a 7-day free trial. After the trial, you are billed monthly on the date your trial ends. You may cancel your subscription at any time through your Stripe Customer Portal (accessible via the "Premium" badge in the app). If you cancel during the trial, you will not be charged. When you cancel after the trial, your Premium access continues until the end of your current billing period. There are no cancellation fees, no long-term commitments, and no questions asked.</p>
+      <p>Premium subscriptions begin with a 7-day free trial. After the trial, you are billed monthly on the date your trial ends. You may cancel your subscription at any time through your account profile page or Stripe Customer Portal. If you cancel during the trial, you will not be charged. When you cancel after the trial, your Premium access continues until the end of your current billing period. There are no cancellation fees, no long-term commitments, and no questions asked.</p>
       <p>Because ParentFlare Premium provides immediate access to AI-generated content upon subscription, refunds are generally not provided for partial billing periods. If you experience a technical issue that prevents you from using Premium features, please contact us at <a href="mailto:hello@parentflare.com">hello@parentflare.com</a> and we will make it right.</p>
 
       <h3>AI-Generated Content</h3>
-      <p>The "Make me one," "Plan my time," and "Find the words" features use AI (powered by Anthropic's Claude) to generate custom activities, plans, and parenting scripts. AI-generated content is provided as suggestions only. You know your child best &mdash; always use your own judgment before applying any suggestion. ParentFlare is not responsible for outcomes resulting from the use of AI-generated content.</p>
+      <p>The "Make me one," "Plan my time," and "Find the words" features use AI (powered by Anthropic's Claude) to generate custom activities, plans, and parenting scripts. AI-generated content is provided as personalized suggestions only. You know your child best &mdash; always use your own judgment before applying any suggestion. ParentFlare is not responsible for outcomes resulting from the use of AI-generated content.</p>
 
       <h3>Use of the Service</h3>
       <p>You agree to use ParentFlare for its intended purpose: helping parents find activities and parenting approaches for their children. You may not use the service for any unlawful purpose or in any way that could harm the service or other users.</p>
@@ -440,29 +443,78 @@
       <hr class="legal-divider">
 
       <h2 id="privacy">Privacy Policy</h2>
-      <p class="legal-updated">Last updated: February 17, 2026</p>
+      <p class="legal-updated">Last updated: February 22, 2026</p>
 
-      <h3>What We Collect</h3>
-      <p>ParentFlare collects minimal data to provide and improve the service.</p>
-      <p><strong>Free users:</strong> We do not require an account or collect personal information to use the free features. We use anonymous analytics (PostHog and Vercel Analytics) to understand how the app is used, such as which features are popular and where users encounter issues. This data does not identify you personally.</p>
-      <p><strong>Premium subscribers:</strong> When you subscribe, we collect your email address to manage your subscription. Your email and payment information are processed and stored securely by Stripe. We store your email and subscription status in our database (hosted on Supabase) to verify your Premium access.</p>
+      <h3>1. Information We Collect</h3>
 
-      <h3>What We Don't Collect</h3>
-      <p>We do not collect your children's names, ages, or personal information in any stored form. The age group you select in the app (Toddler, Little Kid, Big Kid) is stored locally on your device and is not sent to our servers. AI-generated content is not stored or associated with your identity.</p>
+      <p><strong>Account Information.</strong> When you create an account, we collect your name and email address, provided through Google Sign-In or email and password registration. If you sign in with Google, your Google profile photo is displayed in the app but is not stored on our servers.</p>
 
-      <h3>How We Use Your Data</h3>
-      <p>Your email (if provided) is used to manage your Premium subscription, and occasionally share product updates. We will never sell, rent, or share your personal information with third parties for marketing purposes.</p>
+      <p><strong>Caregiver Profile.</strong> When you set up a family profile, you may optionally provide your parenting style (a self-described approach to parenting), and family preferences (a free-text description of what works for your family).</p>
 
-      <h3>Third-Party Services</h3>
-      <p>ParentFlare uses the following third-party services: <strong>Stripe</strong> for payment processing, <strong>Supabase</strong> for database hosting, <strong>Vercel</strong> for app hosting and analytics, <strong>PostHog</strong> for anonymous product analytics, <strong>Anthropic</strong> for AI-generated content (your prompts are sent to Anthropic's API to generate responses), and <strong>Google Fonts</strong> for typography. Each service's own privacy policy governs how they handle data.</p>
+      <p><strong>Home Environment.</strong> You may optionally provide your city and state (used for weather-aware suggestions), home type, outdoor space, and size (used to suggest activities that fit your space), and a supply inventory of what you typically have on hand.</p>
 
-      <h3>Data Retention</h3>
-      <p>If you cancel your Premium subscription, your email and subscription record remain in our database in case you resubscribe. If you would like your data deleted entirely, email <a href="mailto:hello@parentflare.com">hello@parentflare.com</a> and we will remove it within 30 days.</p>
+      <p><strong>Children's Age Groups.</strong> Age group selections (toddler, little kid, big kid) are stored in your family profile to personalize activity suggestions. We do not collect children's names, birthdates, photos, or any individually identifiable information about children. The age group selector for non-signed-in users is stored only in your browser's local storage and is never sent to our servers.</p>
 
-      <h3>Children's Privacy</h3>
-      <p>ParentFlare is designed for parents and caregivers, not for use by children. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us and we will delete it promptly.</p>
+      <p><strong>Activity History.</strong> When you rate an AI-generated activity, plan, or coaching script, we store the feature used, the situation you described, the title of the result, and your rating. This data is linked to your caregiver account, not to any individual child.</p>
 
-      <h3>Contact</h3>
+      <p><strong>Location Data.</strong> Your city and state, if provided, are stored in your profile for weather and regional context. When you use the app, we may request your device's location through your browser to provide local weather information. GPS coordinates are used only for the current session and are never stored in our database, local storage, or logs. They are discarded when you close or navigate away from the app.</p>
+
+      <p><strong>Payment Information.</strong> Payment processing is handled by Stripe. We do not store your credit card number, bank account details, or other payment credentials on our servers.</p>
+
+      <p><strong>Analytics.</strong> We use PostHog for anonymous product analytics (page views, feature usage, session data). No personal information is shared with advertisers.</p>
+
+      <h3>2. How We Use Your Information</h3>
+
+      <p>We use your information to personalize your experience, provide AI-generated content, provide weather-aware suggestions, process payments, and improve the service.</p>
+
+      <p>Your caregiver profile, home environment, supply inventory, family preferences, children's age groups, recent activity ratings, and current weather are sent to Anthropic's Claude API to generate personalized responses. No children's names or individually identifiable child data is sent because we do not collect it.</p>
+
+      <p>Your city/state or session GPS location is used to fetch current weather conditions from Open-Meteo, a free weather API. Session GPS coordinates are also sent to OpenStreetMap's Nominatim service for reverse geocoding (converting coordinates to a city name for display purposes only).</p>
+
+      <h3>3. How We Share Your Information</h3>
+
+      <p>We share your information only with the following service providers, solely to operate the service:</p>
+      <ul>
+        <li><strong>Anthropic</strong> &mdash; Your caregiver profile data (not children's identifiable data) is sent to Anthropic's Claude API to generate personalized content.</li>
+        <li><strong>Supabase</strong> &mdash; Our database and authentication provider.</li>
+        <li><strong>Stripe</strong> &mdash; Payment processing.</li>
+        <li><strong>Vercel</strong> &mdash; Our hosting provider.</li>
+        <li><strong>PostHog</strong> &mdash; Product analytics.</li>
+        <li><strong>Open-Meteo</strong> &mdash; Weather data. No personal information is sent; only geographic coordinates or city names for weather lookups.</li>
+        <li><strong>OpenStreetMap Nominatim</strong> &mdash; Reverse geocoding for weather display. Only session GPS coordinates are sent; no account data.</li>
+      </ul>
+      <p>We do not sell, rent, or share your personal information with advertisers or data brokers.</p>
+
+      <h3>4. Children's Privacy</h3>
+
+      <p>ParentFlare does not collect personally identifiable information about children. We do not collect children's names, birthdates, photos, school information, health data, behavioral data, or any other information that identifies a specific child. The only child-related data we store is the age group category selected by the parent, which is associated with the parent's account and describes the household composition, not individual children. Because we do not collect children's personal information, COPPA data collection requirements are not triggered by this service.</p>
+
+      <h3>5. Your Rights and Choices</h3>
+
+      <p><strong>Access and correction.</strong> You can view and edit all of your profile information directly in the app by tapping your name and visiting your profile page.</p>
+
+      <p><strong>Deletion.</strong> You can delete your account and all associated data by contacting us at <a href="mailto:hello@parentflare.com">hello@parentflare.com</a>. Upon deletion, we will permanently remove your caregiver profile, home environment, supply profile, activity history, and family data. This action cannot be undone.</p>
+
+      <p><strong>Data portability.</strong> You may request a copy of your data by contacting us at <a href="mailto:hello@parentflare.com">hello@parentflare.com</a>.</p>
+
+      <p><strong>California residents (CCPA/CPRA).</strong> If you are a California resident, you have the right to know what personal information we collect and how it is used, request deletion of your personal information, opt out of the sale of personal information (we do not sell personal information), and exercise these rights without discrimination. To exercise these rights, contact us at <a href="mailto:hello@parentflare.com">hello@parentflare.com</a>.</p>
+
+      <p><strong>Location permissions.</strong> You can revoke location permissions at any time through your browser settings. The app will fall back to your stored city/state for weather, or skip weather entirely if no location is available.</p>
+
+      <h3>6. Data Security</h3>
+
+      <p>We use industry-standard security measures to protect your information, including encrypted connections (HTTPS) for all data transmission, Row Level Security policies in our database ensuring users can only access their own data, Supabase authentication with secure session management, and no storage of payment credentials.</p>
+
+      <h3>7. Data Retention</h3>
+
+      <p>We retain your data for as long as your account is active. If you delete your account, all associated data is permanently deleted through cascading database deletion. Anonymous analytics data may be retained indefinitely.</p>
+
+      <h3>8. Changes to This Policy</h3>
+
+      <p>We may update this Privacy Policy from time to time. We will notify you of material changes by updating the "Last updated" date at the top of this section. Your continued use of the service after changes constitutes acceptance of the updated policy.</p>
+
+      <h3>9. Contact</h3>
+
       <p>Privacy questions? Email us at <a href="mailto:hello@parentflare.com">hello@parentflare.com</a>.</p>
     </div>
   </section>
