@@ -120,7 +120,7 @@
     .feature-card.card-plan .feature-icon { background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(16,185,129,0.08)); }
     .feature-card.card-words .feature-icon { background: linear-gradient(135deg, rgba(37,99,235,0.12), rgba(37,99,235,0.06)); }
 
-    /* ---- DEMO VIDEOS (shared phone frame style) ---- */
+    /* ---- DEMO VIDEOS ---- */
     .demo-video { margin-top: 24px; display: flex; justify-content: center; }
     .phone-frame {
       position: relative;
@@ -154,9 +154,6 @@
       .phone-frame { width: 280px; }
     }
 
-    /* legacy class alias */
-    .plan-demo { margin-top: 24px; display: flex; justify-content: center; }
-
     /* ---- HOW IT WORKS ---- */
     .how-it-works { background: var(--cream); }
     .steps { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 48px; position: relative; }
@@ -185,40 +182,51 @@
     .pricing-cta.cta-premium { background: linear-gradient(135deg, var(--purple), #6d28d9); color: white; box-shadow: 0 4px 14px rgba(124,58,237,0.3); }
     .pricing-note { font-size: 13px; color: var(--soft-gray); margin-top: 20px; line-height: 1.6; }
 
-    /* ---- FAQ ---- */
+    /* ---- FAQ (ACCORDION) ---- */
     .faq { background: var(--warm-white); }
     .faq-list { margin-top: 48px; display: grid; gap: 0; }
-    .faq-item { padding: 28px 0; border-bottom: 1px solid #EDE8E0; }
+    .faq-item { border-bottom: 1px solid #EDE8E0; }
     .faq-item:last-child { border-bottom: none; }
-    .faq-item h3 { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; letter-spacing: -0.2px; }
-    .faq-item p { font-size: 15px; color: var(--warm-gray); line-height: 1.7; }
+    .faq-question {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      width: 100%; background: none; border: none; cursor: pointer; padding: 24px 0;
+      font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 700; color: var(--charcoal);
+      text-align: left; letter-spacing: -0.2px;
+    }
+    .faq-question:hover { color: var(--flame); }
+    .faq-icon {
+      width: 28px; height: 28px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; color: var(--soft-gray);
+      transition: transform 0.3s ease;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 0;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding: 0 0 24px; }
+    .faq-answer p { font-size: 15px; color: var(--warm-gray); line-height: 1.7; }
+    .faq-answer a { color: var(--flame); text-decoration: none; }
+    .faq-answer a:hover { text-decoration: underline; }
 
-    /* ---- EMAIL CAPTURE ---- */
-
-    /* ---- LEGAL PAGES ---- */
-    .legal { background: var(--warm-white); padding: 80px 24px; }
-    .legal .section-inner { max-width: 720px; }
-    .legal h2 { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; letter-spacing: -0.5px; }
-    .legal .legal-updated { font-size: 13px; color: var(--soft-gray); margin-bottom: 32px; }
-    .legal h3 { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 700; color: var(--charcoal); margin: 28px 0 10px; letter-spacing: -0.2px; }
-    .legal p { font-size: 15px; color: var(--warm-gray); line-height: 1.8; margin-bottom: 12px; }
-    .legal ul { margin: 0 0 12px 20px; }
-    .legal ul li { font-size: 15px; color: var(--warm-gray); line-height: 1.8; margin-bottom: 4px; }
-    .legal a { color: var(--flame); text-decoration: none; }
-    .legal a:hover { text-decoration: underline; }
-    .legal-divider { border: none; border-top: 1px solid #EDE8E0; margin: 60px 0; }
+    /* ---- FOUNDER ---- */
+    .founder { background: var(--cream); padding: 80px 24px; }
+    .founder-inner { max-width: 560px; margin: 0 auto; text-align: center; }
+    .founder-inner p { font-size: 17px; color: var(--warm-gray); line-height: 1.7; margin-bottom: 16px; }
+    .founder-inner .founder-name { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 15px; color: var(--charcoal); }
 
     /* ---- FOOTER ---- */
-    footer { background: var(--charcoal); color: rgba(255,255,255,0.5); padding: 48px 24px; text-align: center; }
-    .footer-logo { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; color: white; margin-bottom: 8px; }
-    .footer-tagline { font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 24px; }
-    .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 16px; flex-wrap: wrap; }
-    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 14px; transition: color 0.2s; }
-    .footer-links a:hover { color: white; }
-    .footer-contact { font-size: 13px; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
-    .footer-contact a { color: rgba(255,255,255,0.5); text-decoration: none; }
-    .footer-contact a:hover { color: white; }
-    footer .copyright { font-size: 13px; color: rgba(255,255,255,0.25); }
+    footer { background: var(--charcoal); color: rgba(255,255,255,0.5); padding: 48px 24px; }
+    .footer-inner { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; }
+    .footer-brand .footer-logo { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 700; color: white; margin-bottom: 8px; }
+    .footer-brand .footer-tagline { font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.5; }
+    .footer-col h4 { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 14px; }
+    .footer-col a { display: block; font-size: 14px; color: rgba(255,255,255,0.45); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+    .footer-col a:hover { color: white; }
+    .footer-bottom { max-width: 800px; margin: 32px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.25); }
 
     /* ---- NAV ---- */
     .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; transition: background 0.3s ease, box-shadow 0.3s ease; }
@@ -240,6 +248,11 @@
       .problem-moments { grid-template-columns: 1fr 1fr; }
       .feature-grid { grid-template-columns: 1fr 1fr 1fr; }
       .pricing-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-brand { grid-column: 1 / -1; }
     }
 
     @media (min-width: 900px) {
@@ -379,22 +392,48 @@
           <a href="https://parentflare.vercel.app" class="pricing-cta cta-premium">Start Free Trial</a>
         </div>
       </div>
-      <p class="pricing-note fade-up">Premium includes a 7-day free trial. After that, it's $5.00 USD/month via Stripe. Cancel anytime from your account &mdash; no fees, no questions asked.</p>
+      <p class="pricing-note fade-up">7-day free trial &middot; $5/mo after &middot; Cancel anytime from your account.</p>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="faq">
+  <section class="faq" id="faq">
     <div class="section-inner">
       <div class="section-label fade-up">Questions</div>
       <h2 class="section-title fade-up">Frequently asked questions</h2>
       <div class="faq-list">
-        <div class="faq-item fade-up"><h3>What age range is this for?</h3><p>ParentFlare covers ages 2&ndash;11, split into three groups: Toddlers (2&ndash;4), Little Kids (5&ndash;7), and Big Kids (8&ndash;11). Activities and personalized results are tailored to your child's age group.</p></div>
-        <div class="faq-item fade-up"><h3>Do I need an account to use it?</h3><p>No. The free version works instantly &mdash; no sign-up, no account, no email required. Creating an optional account (with Google or email) unlocks personalized suggestions based on your family profile. Premium features require an account for billing through Stripe.</p></div>
-        <div class="faq-item fade-up"><h3>What's the difference between free and Premium?</h3><p>Free gives you the full activity library plus custom activities and coaching scripts (single results). Premium adds follow-up conversations so you can adjust results in real time, plus "Plan my time" &mdash; a personalized trip and day planner that creates custom activity plans based on your location, time, and energy level.</p></div>
-        <div class="faq-item fade-up"><h3>How does personalization work?</h3><p>When you create a free account, you can set up a family profile describing your parenting style, home environment, what supplies you have, and what generally works for your family. This context is sent to our AI so every suggestion is tailored to your actual situation &mdash; your space, your supplies, your kids' interests. No children's names or identifiable information is ever collected.</p></div>
-        <div class="faq-item fade-up"><h3>How is this different from other parenting apps?</h3><p>Most activity apps are designed for calm, planned moments &mdash; browsing Pinterest-style lists when you have time to prepare. ParentFlare is built for right now. You open it when you have unplanned time and need something immediately. No browsing, no saving for later, no prep lists. Just what to do and what to say, in seconds.</p></div>
-        <div class="faq-item fade-up"><h3>Is my data safe?</h3><p>We don't sell your data. We don't collect children's names or identifiable information. Your family profile data is used only to personalize your experience and is never shared with advertisers. See our full <a href="#privacy" style="color:var(--flame);text-decoration:none;">Privacy Policy</a> below.</p></div>
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false"><span>What age range is this for?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>ParentFlare covers ages 2&ndash;11, split into three groups: Toddlers (2&ndash;4), Little Kids (5&ndash;7), and Big Kids (8&ndash;11). Activities and personalized results are tailored to your child's age group.</p></div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false"><span>Do I need an account to use it?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>No. The free version works instantly &mdash; no sign-up, no account, no email required. Creating an optional account (with Google or email) unlocks personalized suggestions based on your family profile. Premium features require an account for billing through Stripe.</p></div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false"><span>What's the difference between free and Premium?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Free gives you the full activity library plus custom activities and coaching scripts (single results). Premium adds follow-up conversations so you can adjust results in real time, plus "Plan my time" &mdash; a personalized trip and day planner that creates custom activity plans based on your location, time, and energy level.</p></div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false"><span>How does personalization work?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>When you create a free account, you can set up a family profile describing your parenting style, home environment, what supplies you have, and what generally works for your family. This context is used so every suggestion is tailored to your actual situation &mdash; your space, your supplies, your kids' interests. No children's names or identifiable information is ever collected.</p></div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false"><span>How is this different from other parenting apps?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Most activity apps are designed for calm, planned moments &mdash; browsing Pinterest-style lists when you have time to prepare. ParentFlare is built for right now. You open it when you have unplanned time and need something immediately. No browsing, no saving for later, no prep lists. Just what to do and what to say, in seconds.</p></div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false"><span>Is my data safe?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>We don't sell your data. We don't collect children's names or identifiable information. Your family profile data is used only to personalize your experience and is never shared with advertisers. See our full <a href="/privacy">Privacy Policy</a> for details.</p></div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false"><span>Can I use this on my phone?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Yes. ParentFlare is a web app that works on any device with a browser &mdash; iPhone, Android, tablet, laptop. No download required. Just open it and go.</p></div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false"><span>What if I forget to cancel the trial?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Your first charge is $5 after the 7-day trial. You can cancel anytime from your account profile or the Stripe Customer Portal &mdash; no fees, no questions. If you cancel during the trial, you won't be charged at all.</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -408,132 +447,45 @@
     </div>
   </section>
 
-  <!-- TERMS OF SERVICE & PRIVACY POLICY -->
-  <section class="legal" id="terms">
-    <div class="section-inner">
-      <h2>Terms of Service</h2>
-      <p class="legal-updated">Last updated: February 22, 2026</p>
-
-      <h3>What ParentFlare Is</h3>
-      <p>ParentFlare is a web-based application that provides parents with a curated activity library, a custom activity generator, coaching scripts, and a personalized trip and day planner (Plan my time). The service is available at <a href="https://parentflare.vercel.app">parentflare.vercel.app</a> and described at <a href="https://parentflare.com">parentflare.com</a>.</p>
-
-      <h3>What ParentFlare Is Not</h3>
-      <p>ParentFlare is not a medical, therapeutic, psychological, or clinical service. The activities and parenting scripts provided are general suggestions based on common child development principles. They are not a substitute for professional advice from a pediatrician, therapist, psychologist, or other licensed healthcare provider. If your child has specific medical, behavioral, or developmental needs, please consult a qualified professional.</p>
-
-      <h3>Free and Premium Plans</h3>
-      <p>ParentFlare offers a free tier that includes access to 85+ curated activities, custom activities, and coaching scripts. No account or payment is required to use the free tier. Creating an optional account enables personalized suggestions based on your family profile.</p>
-      <p>ParentFlare Premium is an optional paid subscription at $5.00 USD per month. Premium adds follow-up conversations (up to 5 turns per session) for the activity generator and coaching script features, plus "Plan my time" &mdash; a personalized trip and day planner that creates custom activity plans. Premium subscriptions are processed securely through Stripe.</p>
-
-      <h3>Billing and Cancellation</h3>
-      <p>Premium subscriptions begin with a 7-day free trial. After the trial, you are billed monthly on the date your trial ends. You may cancel your subscription at any time through your account profile page or Stripe Customer Portal. If you cancel during the trial, you will not be charged. When you cancel after the trial, your Premium access continues until the end of your current billing period. There are no cancellation fees, no long-term commitments, and no questions asked.</p>
-      <p>Because ParentFlare Premium provides immediate access to AI-generated content upon subscription, refunds are generally not provided for partial billing periods. If you experience a technical issue that prevents you from using Premium features, please contact us at <a href="mailto:hello@parentflare.com">hello@parentflare.com</a> and we will make it right.</p>
-
-      <h3>AI-Generated Content</h3>
-      <p>The "Make me one," "Plan my time," and "Find the words" features use AI (powered by Anthropic's Claude) to generate custom activities, plans, and parenting scripts. AI-generated content is provided as personalized suggestions only. You know your child best &mdash; always use your own judgment before applying any suggestion. ParentFlare is not responsible for outcomes resulting from the use of AI-generated content.</p>
-
-      <h3>Use of the Service</h3>
-      <p>You agree to use ParentFlare for its intended purpose: helping parents find activities and parenting approaches for their children. You may not use the service for any unlawful purpose or in any way that could harm the service or other users.</p>
-
-      <h3>Changes to These Terms</h3>
-      <p>We may update these terms from time to time. If we make significant changes, we will update the "Last updated" date above. Your continued use of ParentFlare after changes constitutes acceptance of the updated terms.</p>
-
-      <h3>Contact</h3>
-      <p>Questions about these terms? Email us at <a href="mailto:hello@parentflare.com">hello@parentflare.com</a>.</p>
-
-      <hr class="legal-divider">
-
-      <h2 id="privacy">Privacy Policy</h2>
-      <p class="legal-updated">Last updated: February 22, 2026</p>
-
-      <h3>1. Information We Collect</h3>
-
-      <p><strong>Account Information.</strong> When you create an account, we collect your name and email address, provided through Google Sign-In or email and password registration. If you sign in with Google, your Google profile photo is displayed in the app but is not stored on our servers.</p>
-
-      <p><strong>Caregiver Profile.</strong> When you set up a family profile, you may optionally provide your parenting style (a self-described approach to parenting), and family preferences (a free-text description of what works for your family).</p>
-
-      <p><strong>Home Environment.</strong> You may optionally provide your city and state (used for weather-aware suggestions), home type, outdoor space, and size (used to suggest activities that fit your space), and a supply inventory of what you typically have on hand.</p>
-
-      <p><strong>Children's Age Groups.</strong> Age group selections (toddler, little kid, big kid) are stored in your family profile to personalize activity suggestions. We do not collect children's names, birthdates, photos, or any individually identifiable information about children. The age group selector for non-signed-in users is stored only in your browser's local storage and is never sent to our servers.</p>
-
-      <p><strong>Activity History.</strong> When you rate an AI-generated activity, plan, or coaching script, we store the feature used, the situation you described, the title of the result, and your rating. This data is linked to your caregiver account, not to any individual child.</p>
-
-      <p><strong>Location Data.</strong> Your city and state, if provided, are stored in your profile for weather and regional context. When you use the app, we may request your device's location through your browser to provide local weather information. GPS coordinates are used only for the current session and are never stored in our database, local storage, or logs. They are discarded when you close or navigate away from the app.</p>
-
-      <p><strong>Payment Information.</strong> Payment processing is handled by Stripe. We do not store your credit card number, bank account details, or other payment credentials on our servers.</p>
-
-      <p><strong>Analytics.</strong> We use PostHog for anonymous product analytics (page views, feature usage, session data). No personal information is shared with advertisers.</p>
-
-      <h3>2. How We Use Your Information</h3>
-
-      <p>We use your information to personalize your experience, provide AI-generated content, provide weather-aware suggestions, process payments, and improve the service.</p>
-
-      <p>Your caregiver profile, home environment, supply inventory, family preferences, children's age groups, recent activity ratings, and current weather are sent to Anthropic's Claude API to generate personalized responses. No children's names or individually identifiable child data is sent because we do not collect it.</p>
-
-      <p>Your city/state or session GPS location is used to fetch current weather conditions from Open-Meteo, a free weather API. Session GPS coordinates are also sent to OpenStreetMap's Nominatim service for reverse geocoding (converting coordinates to a city name for display purposes only).</p>
-
-      <h3>3. How We Share Your Information</h3>
-
-      <p>We share your information only with the following service providers, solely to operate the service:</p>
-      <ul>
-        <li><strong>Anthropic</strong> &mdash; Your caregiver profile data (not children's identifiable data) is sent to Anthropic's Claude API to generate personalized content.</li>
-        <li><strong>Supabase</strong> &mdash; Our database and authentication provider.</li>
-        <li><strong>Stripe</strong> &mdash; Payment processing.</li>
-        <li><strong>Vercel</strong> &mdash; Our hosting provider.</li>
-        <li><strong>PostHog</strong> &mdash; Product analytics.</li>
-        <li><strong>Open-Meteo</strong> &mdash; Weather data. No personal information is sent; only geographic coordinates or city names for weather lookups.</li>
-        <li><strong>OpenStreetMap Nominatim</strong> &mdash; Reverse geocoding for weather display. Only session GPS coordinates are sent; no account data.</li>
-      </ul>
-      <p>We do not sell, rent, or share your personal information with advertisers or data brokers.</p>
-
-      <h3>4. Children's Privacy</h3>
-
-      <p>ParentFlare does not collect personally identifiable information about children. We do not collect children's names, birthdates, photos, school information, health data, behavioral data, or any other information that identifies a specific child. The only child-related data we store is the age group category selected by the parent, which is associated with the parent's account and describes the household composition, not individual children. Because we do not collect children's personal information, COPPA data collection requirements are not triggered by this service.</p>
-
-      <h3>5. Your Rights and Choices</h3>
-
-      <p><strong>Access and correction.</strong> You can view and edit all of your profile information directly in the app by tapping your name and visiting your profile page.</p>
-
-      <p><strong>Deletion.</strong> You can delete your account and all associated data by contacting us at <a href="mailto:hello@parentflare.com">hello@parentflare.com</a>. Upon deletion, we will permanently remove your caregiver profile, home environment, supply profile, activity history, and family data. This action cannot be undone.</p>
-
-      <p><strong>Data portability.</strong> You may request a copy of your data by contacting us at <a href="mailto:hello@parentflare.com">hello@parentflare.com</a>.</p>
-
-      <p><strong>California residents (CCPA/CPRA).</strong> If you are a California resident, you have the right to know what personal information we collect and how it is used, request deletion of your personal information, opt out of the sale of personal information (we do not sell personal information), and exercise these rights without discrimination. To exercise these rights, contact us at <a href="mailto:hello@parentflare.com">hello@parentflare.com</a>.</p>
-
-      <p><strong>Location permissions.</strong> You can revoke location permissions at any time through your browser settings. The app will fall back to your stored city/state for weather, or skip weather entirely if no location is available.</p>
-
-      <h3>6. Data Security</h3>
-
-      <p>We use industry-standard security measures to protect your information, including encrypted connections (HTTPS) for all data transmission, Row Level Security policies in our database ensuring users can only access their own data, Supabase authentication with secure session management, and no storage of payment credentials.</p>
-
-      <h3>7. Data Retention</h3>
-
-      <p>We retain your data for as long as your account is active. If you delete your account, all associated data is permanently deleted through cascading database deletion. Anonymous analytics data may be retained indefinitely.</p>
-
-      <h3>8. Changes to This Policy</h3>
-
-      <p>We may update this Privacy Policy from time to time. We will notify you of material changes by updating the "Last updated" date at the top of this section. Your continued use of the service after changes constitutes acceptance of the updated policy.</p>
-
-      <h3>9. Contact</h3>
-
-      <p>Privacy questions? Email us at <a href="mailto:hello@parentflare.com">hello@parentflare.com</a>.</p>
+  <!-- FOUNDER -->
+  <section class="founder">
+    <div class="founder-inner fade-up">
+      <p>"I built ParentFlare because I kept having the same moment: the kids needed something to do, I had no plan, and the easy answer was always a screen. This is the tool I wished existed."</p>
+      <p class="founder-name">Spencer &mdash; dad of two boys</p>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">ParentFlare</div>
-    <p class="footer-tagline">Make parenting doable.</p>
-    <div class="footer-links">
-      <a href="https://parentflare.vercel.app">Open the App</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#terms">Terms</a>
-      <a href="#privacy">Privacy</a>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">ParentFlare</div>
+        <p class="footer-tagline">Make parenting doable.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="https://parentflare.vercel.app">Open the App</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://instagram.com/parentflare" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:hello@parentflare.com">Email Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="/terms">Terms of Service</a>
+        <a href="/privacy">Privacy Policy</a>
+      </div>
     </div>
-    <p class="footer-contact">Questions? <a href="mailto:hello@parentflare.com">hello@parentflare.com</a></p>
-    <p class="copyright">&copy; 2026 ParentFlare. Built by parents, for parents.</p>
+    <div class="footer-bottom">
+      <p>Made with 🔥 by a dad of two boys.</p>
+      <p>&copy; 2026 ParentFlare</p>
+    </div>
   </footer>
 
-  <!-- Scroll animations -->
+  <!-- Scripts -->
   <script>
     // Nav scroll effect
     window.addEventListener('scroll', () => {
@@ -545,6 +497,24 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); e.target.classList.remove('waiting'); } });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-up').forEach(el => { el.classList.add('waiting'); observer.observe(el); });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item.open').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        // Toggle clicked
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
   </script>
 
 </body>
