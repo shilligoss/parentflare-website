@@ -46,28 +46,28 @@
     @keyframes flare6 { 0% { bottom:-70px;opacity:0;transform:translateX(0) scale(0.25)} 15%{opacity:0.85} 60%{opacity:0.35} 100%{bottom:110%;opacity:0;transform:translateX(35px) scale(1.15)} }
     @keyframes flare7 { 0% { bottom:-110px;opacity:0;transform:translateX(0) scale(0.35)} 15%{opacity:0.7} 60%{opacity:0.25} 100%{bottom:110%;opacity:0;transform:translateX(-30px) scale(1.25)} }
 
-    .flare-container { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .dark-zone { position: relative; background: var(--charcoal); }
+    .flare-container { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1; }
     .flare { position: absolute; border-radius: 50%; filter: blur(18px); }
 
     /* ---- HERO ---- */
     .hero {
-      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       background: linear-gradient(180deg, #ffc4a3 0%, #ff9a76 30%, #c86a4a 55%, #2a2a4a 78%, #1A1A2E 100%);
-      padding: 100px 24px 64px;
+      padding: 100px 24px 40px;
       text-align: center;
     }
 
-    .hero-content { position: relative; z-index: 1; max-width: 600px; }
+    .hero-content { position: relative; z-index: 2; max-width: 600px; }
 
     .hero h1 { font-family: 'Outfit', sans-serif; font-size: clamp(48px, 9vw, 64px); font-weight: 800; color: white; line-height: 1.05; margin-bottom: 12px; letter-spacing: -0.02em; text-shadow: 0 2px 20px rgba(0,0,0,0.15); }
     .hero-tagline { font-size: clamp(16px, 3vw, 20px); font-weight: 500; color: rgba(255,255,255,0.9); line-height: 1.5; margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; }
     .hero-sub { margin-bottom: 20px; font-size: 14px; color: rgba(255,255,255,0.6); }
 
     .hero-cta {
-      display: inline-flex; align-items: center; gap: 10px; background: #FFFFFF; color: var(--flame); border: 2px solid white; border-radius: 16px; padding: 18px 36px; font-size: 18px; font-weight: 600; font-family: inherit; cursor: pointer; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease; box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF; color: var(--flame); border: 2px solid white; border-radius: 50px; padding: 16px 40px; font-size: 18px; font-weight: 600; font-family: inherit; cursor: pointer; text-decoration: none; white-space: nowrap; max-width: 320px; transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease; box-shadow: 0 4px 16px rgba(0,0,0,0.15);
     }
     .hero-cta:hover { transform: translateY(-2px); background: var(--flame); color: white; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
     .hero-cta:active { transform: scale(0.97); }
@@ -80,7 +80,8 @@
     .section-desc { font-size: 17px; color: var(--warm-gray); line-height: 1.7; max-width: 560px; }
 
     /* ---- PROBLEM ---- */
-    .problem { background: var(--charcoal); color: white; }
+    .problem { background: transparent; color: white; padding-top: 48px; }
+    .problem .section-inner { position: relative; z-index: 2; }
     .problem .section-label { color: var(--flame-light); }
     .problem .section-title { color: white; }
     .problem .section-desc { color: rgba(255,255,255,0.65); }
@@ -264,8 +265,8 @@
     <a href="https://parentflare.vercel.app" class="nav-cta">Open the App</a>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
+  <!-- HERO + PROBLEM (shared dark zone for particles) -->
+  <div class="dark-zone">
     <div class="flare-container">
       <div class="flare" style="left:5%;width:50px;height:50px;background:radial-gradient(circle,#ff6b35 0%,#f7931e 50%,transparent 100%);animation:flare1 4.5s ease-out infinite"></div>
       <div class="flare" style="left:18%;width:65px;height:65px;background:radial-gradient(circle,#FFD23F 0%,#ffecb3 50%,transparent 100%);animation:flare2 5.5s ease-out infinite;animation-delay:1.2s"></div>
@@ -278,28 +279,30 @@
       <div class="flare" style="left:65%;width:45px;height:45px;background:radial-gradient(circle,#ff6b35 0%,#ff8c61 50%,transparent 100%);animation:flare1 7s ease-out infinite;animation-delay:4s"></div>
       <div class="flare" style="left:92%;width:40px;height:40px;background:radial-gradient(circle,white 0%,rgba(255,255,255,0.6) 50%,transparent 100%);animation:flare6 4.5s ease-out infinite;animation-delay:0.3s"></div>
     </div>
-    <div class="hero-content">
-      <h1>Make parenting doable.</h1>
-      <p class="hero-tagline">Right activity. Right plan. Right words &mdash; exactly when you need them.</p>
-      <p class="hero-sub">No account needed. Works on any device.</p>
-      <a href="https://parentflare.vercel.app" class="hero-cta">Find something to do right now &rarr;</a>
-    </div>
-  </section>
 
-  <!-- PROBLEM -->
-  <section class="problem">
-    <div class="section-inner">
-      <div class="section-label fade-up">Sound familiar?</div>
-      <h2 class="section-title fade-up">The moments no one prepares you for.</h2>
-      <p class="section-desc fade-up">Not the big milestones. The Tuesday at 5:30pm moments. The ones where you're out of ideas, out of patience, and reaching for the iPad because you don't know what else to do.</p>
-      <div class="problem-moments">
-        <div class="moment-card fade-up"><div class="moment-time">5:47 PM &middot; Tuesday</div><p>"Dinner's in 20 minutes. They're whining. I have nothing."</p></div>
-        <div class="moment-card fade-up"><div class="moment-time">3:12 PM &middot; Saturday</div><p>"It's raining. We've been inside all day. Everyone's losing it."</p></div>
-        <div class="moment-card fade-up"><div class="moment-time">7:38 PM &middot; Wednesday</div><p>"Bedtime in 20 minutes and they are completely wired."</p></div>
-        <div class="moment-card fade-up"><div class="moment-time">10:15 AM &middot; Sunday</div><p>"They just hit their sibling and I froze. I didn't know what to say."</p></div>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Make parenting doable.</h1>
+        <p class="hero-tagline">Right activity. Right plan. Right words &mdash; exactly when you need them.</p>
+        <p class="hero-sub">No account needed. Works on any device.</p>
+        <a href="https://parentflare.vercel.app" class="hero-cta">Get your first activity &rarr;</a>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="problem">
+      <div class="section-inner">
+        <div class="section-label fade-up">Sound familiar?</div>
+        <h2 class="section-title fade-up">The moments no one prepares you for.</h2>
+        <p class="section-desc fade-up">Not the big milestones. The Tuesday at 5:30pm moments. The ones where you're out of ideas, out of patience, and reaching for the iPad because you don't know what else to do.</p>
+        <div class="problem-moments">
+          <div class="moment-card fade-up"><div class="moment-time">5:47 PM &middot; Tuesday</div><p>"Dinner's in 20 minutes. They're whining. I have nothing."</p></div>
+          <div class="moment-card fade-up"><div class="moment-time">3:12 PM &middot; Saturday</div><p>"It's raining. We've been inside all day. Everyone's losing it."</p></div>
+          <div class="moment-card fade-up"><div class="moment-time">7:38 PM &middot; Wednesday</div><p>"Bedtime in 20 minutes and they are completely wired."</p></div>
+          <div class="moment-card fade-up"><div class="moment-time">10:15 AM &middot; Sunday</div><p>"They just hit their sibling and I froze. I didn't know what to say."</p></div>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <!-- FEATURES -->
   <section class="features">
@@ -444,7 +447,7 @@
     <div class="section-inner">
       <h2 class="section-title fade-up" style="margin-bottom:12px;">Send up the flare.</h2>
       <p class="section-desc fade-up" style="margin:0 auto 32px;text-align:center;">We've got you.</p>
-      <a href="https://parentflare.vercel.app" class="hero-cta fade-up" style="display:inline-flex;">Find something to do right now &rarr;</a>
+      <a href="https://parentflare.vercel.app" class="hero-cta fade-up" style="display:inline-flex;">Get your first activity &rarr;</a>
     </div>
   </section>
 
