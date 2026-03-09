@@ -258,7 +258,7 @@
   <nav class="nav" id="nav">
     <a href="#" class="nav-brand">
       <div class="nav-logo">
-        <svg width="20" height="24" viewBox="0 0 80 100" fill="none"><defs><linearGradient id="navFl" x1="20" y1="90" x2="55" y2="8" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B35"/><stop offset="70%" stop-color="#E83D5E"/><stop offset="100%" stop-color="#D62259"/></linearGradient></defs><path d="M40 4C40 4 16 32 16 52C16 66 24 78 36 83C31 74 29 64 36 52C43 40 47 32 40 16C50 30 64 42 64 58C64 72 54 83 40 88C58 83 68 70 68 52C68 30 40 4 40 4Z" fill="url(#navFl)"/><ellipse cx="40" cy="62" rx="7" ry="6.5" fill="#FFD23F" opacity="0.9"/></svg>
+        <img src="/images/parentflare-logo.png" alt="ParentFlare" width="36" height="36" style="display:block;border-radius:10px;">
       </div>
       <span class="nav-name">ParentFlare</span>
     </a>
@@ -455,7 +455,10 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
-        <div class="footer-logo">ParentFlare</div>
+        <div class="footer-logo" style="display:flex;align-items:center;gap:10px;">
+          <img src="/images/parentflare-logo.png" alt="ParentFlare" width="32" height="32" style="display:block;border-radius:8px;">
+          ParentFlare
+        </div>
         <p class="footer-tagline">Make parenting doable.</p>
       </div>
       <div class="footer-col">
@@ -467,7 +470,7 @@
       <div class="footer-col">
         <h4>Connect</h4>
         <a href="https://instagram.com/parentflare" target="_blank" rel="noopener">Instagram</a>
-        <a href="mailto:hello@parentflare.com">Email Us</a>
+        <a href="/cdn-cgi/l/email-protection#90f8f5fcfcffd0e0f1e2f5fee4f6fcf1e2f5bef3fffd">Email Us</a>
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
@@ -482,7 +485,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Nav scroll effect
     window.addEventListener('scroll', () => {
       document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
@@ -505,13 +508,4 @@
           i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
         });
         // Toggle clicked
-        if (!isOpen) {
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
-  </script>
-
-</body>
-</html>
+        if (!isOpen
