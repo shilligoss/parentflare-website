@@ -191,17 +191,25 @@
     /* ---- NAV ---- */
     .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; transition: background 0.3s ease, box-shadow 0.3s ease; }
     .nav.scrolled { background: rgba(250,248,245,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 1px 8px rgba(26,26,46,0.06); }
+    .nav.scrolled .nav-cta { background: #FF6B35; color: #FFFFFF; border-color: #FF6B35; }
     .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .nav-logo { width: 36px; height: 36px; background: #1A1A2E; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .nav-logo img { animation: flamePulse 3s ease-in-out infinite; }
     .nav-name { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 700; color: var(--charcoal); }
-    .nav-cta { background: var(--charcoal); color: white; border: none; border-radius: 24px; padding: 10px 20px; font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.2s ease; }
+    .nav-link { font-family: 'DM Sans', sans-serif; font-size: 14px; color: #78716C; text-decoration: none; margin-right: 24px; }
+    .nav-link:hover { color: #44403C; }
+    .nav-cta { background: var(--charcoal); color: white; border: 2px solid transparent; border-radius: 24px; padding: 10px 20px; font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease; }
     .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(26,26,46,0.3); }
 
     /* ---- ANIMATIONS ---- */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes flamePulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
     .fade-up { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-up.waiting { opacity: 0; transform: translateY(24px); }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ---- FINAL CTA INTRO ---- */
+    .final-cta-intro { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; color: #1A1A2E; margin-bottom: 16px; }
 
     /* ---- RESPONSIVE ---- */
     @media (min-width: 640px) {
@@ -214,6 +222,7 @@
       .feature-grid { grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
       .story-grid { grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
       .running-empty-quote { font-size: 28px; }
+      .final-cta-intro { font-size: 28px; }
     }
 
     @media (max-width: 640px) {
@@ -236,6 +245,7 @@
       </div>
       <span class="nav-name">ParentFlare</span>
     </a>
+    <a href="#how-it-works" class="nav-link">How it works</a>
     <a href="https://parentflare.vercel.app" class="nav-cta">Open the App</a>
   </nav>
 
@@ -339,7 +349,7 @@
   <!-- PRICING -->
   <section class="pricing" id="pricing">
     <div class="section-inner">
-      <div class="section-label fade-up">Simple pricing</div>
+      <div class="section-label fade-up">Start free. No pressure.</div>
       <h2 class="section-title fade-up">Start free. Upgrade when you're ready.</h2>
       <p class="section-desc fade-up">Every parent gets the full activity library and personalized tools for free. Premium unlocks unlimited Spark custom activities, Adventure Builder, and more.</p>
       <div class="pricing-grid">
@@ -348,25 +358,26 @@
           <div class="pricing-price">$0</div>
           <div class="pricing-subtitle">No account needed</div>
           <ul class="pricing-features">
-            <li>229 curated ready-made activities</li>
+            <li>120+ curated ready-made activities</li>
             <li>Filter by age, time, prep, and involvement</li>
             <li>Custom activities (3 free previews)</li>
             <li>Coaching scripts (3 free previews)</li>
           </ul>
-          <a href="https://parentflare.vercel.app" class="pricing-cta cta-free">Try It Free</a>
+          <a href="https://parentflare.vercel.app" class="pricing-cta cta-free">Start browsing</a>
         </div>
         <div class="pricing-card featured fade-up">
           <div class="pricing-badge">Most Popular</div>
           <h3>Premium</h3>
           <div class="pricing-price">$5 <span>/ month</span></div>
           <div class="pricing-subtitle">7-day free trial, cancel anytime</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:14px;color:#78716C;font-style:italic;margin-top:8px;">Less than a cup of coffee. For the thing that makes every week with your kids better.</p>
           <ul class="pricing-features">
             <li>Everything in Free</li>
             <li>Adventure Builder &mdash; custom plans for trips, weekends, and open afternoons</li>
             <li>Unlimited Spark custom activities and refinements</li>
             <li>Unlimited coaching scripts and follow-ups</li>
           </ul>
-          <a href="https://parentflare.vercel.app" class="pricing-cta cta-premium">Start Free Trial</a>
+          <a href="https://parentflare.vercel.app" class="pricing-cta cta-premium">Try Premium free for 7 days</a>
         </div>
       </div>
       <p class="pricing-note fade-up">7-day free trial &middot; $5/mo after &middot; Cancel anytime from your account.</p>
@@ -418,6 +429,7 @@
   <!-- FINAL CTA -->
   <section style="background:var(--cream);padding:80px 24px;text-align:center;">
     <div class="section-inner">
+      <p class="final-cta-intro fade-up">You don't have to figure this out alone.</p>
       <h2 class="section-title fade-up" style="margin-bottom:12px;">Send up the flare.</h2>
       <p class="section-desc fade-up" style="margin:0 auto 32px;text-align:center;">We've got you.</p>
       <a href="https://parentflare.vercel.app" class="hero-cta fade-up" style="display:inline-flex;">Find something for right now &rarr;</a>
