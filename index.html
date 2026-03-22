@@ -192,13 +192,18 @@
 
     /* ---- NAV ---- */
     .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; transition: background 0.3s ease, box-shadow 0.3s ease; }
+    /* Scrolled over dark section: dark frosted glass */
     .nav.scrolled { background: rgba(26,36,32,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 1px 8px rgba(0,0,0,0.15); }
-    .nav.scrolled .nav-cta { background: #2EBF8B; color: #1A2420; border-color: #2EBF8B; }
+    /* Scrolled over light section: cream frosted glass + dark text */
+    .nav.scrolled.nav-light { background: rgba(255,248,240,0.95); box-shadow: 0 1px 8px rgba(26,26,46,0.07); }
+    .nav.scrolled.nav-light .nav-name { color: #1E2824; }
+    .nav.scrolled.nav-light .nav-link { color: #1E2824; }
+    .nav.scrolled.nav-light .nav-link:hover { color: rgba(30,40,36,0.55); }
     .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .nav-logo { width: 36px; height: 36px; background: #1A1A2E; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
     .nav-logo img { animation: flamePulse 3s ease-in-out infinite; }
-    .nav-name { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 700; color: #F0EDE8; }
-    .nav-link { font-family: 'DM Sans', sans-serif; font-size: 14px; color: #F0EDE8; text-decoration: none; margin-right: 24px; display: none; }
+    .nav-name { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 700; color: #F0EDE8; transition: color 0.3s ease; }
+    .nav-link { font-family: 'DM Sans', sans-serif; font-size: 14px; color: #F0EDE8; text-decoration: none; margin-right: 24px; display: none; transition: color 0.3s ease; }
     .nav-link:hover { color: rgba(240,237,232,0.7); }
     .nav-cta { background: #2EBF8B; color: #1A2420; border: 2px solid #2EBF8B; border-radius: 24px; padding: 10px 20px; font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease; }
     .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(46,191,139,0.35); }
@@ -477,10 +482,30 @@
 
   <!-- Scripts -->
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Nav scroll effect
-    window.addEventListener('scroll', () => {
-      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
-    });
+    // Nav scroll effect — dark text on light sections, light text on dark sections
+    const nav = document.getElementById('nav');
+    const darkSections = document.querySelectorAll('.dark-zone, .running-empty');
+    const NAV_H = 72; // approximate nav bottom edge
+
+    function updateNav() {
+      const scrolled = window.scrollY > 40;
+      nav.classList.toggle('scrolled', scrolled);
+
+      if (scrolled) {
+        // Light mode unless the nav is currently sitting over a dark section
+        let overDark = false;
+        darkSections.forEach(el => {
+          const r = el.getBoundingClientRect();
+          if (r.top <= NAV_H && r.bottom > NAV_H) overDark = true;
+        });
+        nav.classList.toggle('nav-light', !overDark);
+      } else {
+        nav.classList.remove('nav-light');
+      }
+    }
+
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
 
     // Fade-up on scroll
     const observer = new IntersectionObserver((entries) => {
