@@ -18,10 +18,12 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://parentflare.com" />
     <title>ParentFlare — Every school email, handled.</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/parentflare-mark.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -34,22 +36,18 @@
       }
 
       :root {
-        --flame: #2ebf8b;
-        --flame-deep: #1b7a5a;
-        --flame-light: #2ebf8b;
-        --charcoal: #1a1a2e;
-        --warm-gray: #2d2d3f;
-        --soft-gray: #6b6b7b;
-        --cream: #fff9f4;
-        --warm-white: #fff9f4;
-        --yellow: #ffd23f;
-        --forest: #1a2420;
-        --emerald: #2ebf8b;
-        --canvas: #1a2420;
-        --text-on-dark: #f0ede8;
-        --text-on-dark-muted: rgba(240, 237, 232, 0.6);
-        --text-on-card: #1e2824;
-        --text-on-card-body: #5a6662;
+        /* Grounded Warmth — locked palette (DESIGN-SYSTEM.md). Do not substitute. */
+        --pf-teal: #1a5450;
+        --pf-teal-mid: #246460;
+        --pf-gold: #c8920a;
+        --pf-stone: #f4f2ee;
+        --pf-white: #ffffff;
+        --pf-off-white: #fafaf7;
+        --pf-ink: #1c1a14;
+        --pf-ink-light: #3a3428;
+        --pf-warm-gray: #a8a498;
+        --pf-border: #ddd9d0;
+        --pf-tag-bg: #e8f2f0;
       }
 
       html {
@@ -59,159 +57,14 @@
 
       body {
         font-family:
-          "DM Sans",
+          "Jost",
           -apple-system,
           system-ui,
           sans-serif;
-        color: var(--text-on-dark);
-        background: var(--canvas);
+        color: var(--pf-ink);
+        background: var(--pf-stone);
         overflow-x: hidden;
         -webkit-font-smoothing: antialiased;
-      }
-
-      /* ---- FLARE PARTICLES ---- */
-      @keyframes flare1 {
-        0% {
-          bottom: -80px;
-          opacity: 0;
-          transform: translateX(0) scale(0.3);
-        }
-        15% {
-          opacity: 0.85;
-        }
-        60% {
-          opacity: 0.4;
-        }
-        100% {
-          bottom: 110%;
-          opacity: 0;
-          transform: translateX(30px) scale(1.2);
-        }
-      }
-      @keyframes flare2 {
-        0% {
-          bottom: -100px;
-          opacity: 0;
-          transform: translateX(0) scale(0.3);
-        }
-        15% {
-          opacity: 0.75;
-        }
-        60% {
-          opacity: 0.3;
-        }
-        100% {
-          bottom: 110%;
-          opacity: 0;
-          transform: translateX(-40px) scale(1.3);
-        }
-      }
-      @keyframes flare3 {
-        0% {
-          bottom: -60px;
-          opacity: 0;
-          transform: translateX(0) scale(0.2);
-        }
-        15% {
-          opacity: 0.9;
-        }
-        60% {
-          opacity: 0.35;
-        }
-        100% {
-          bottom: 110%;
-          opacity: 0;
-          transform: translateX(20px) scale(1.1);
-        }
-      }
-      @keyframes flare4 {
-        0% {
-          bottom: -120px;
-          opacity: 0;
-          transform: translateX(0) scale(0.4);
-        }
-        15% {
-          opacity: 0.7;
-        }
-        60% {
-          opacity: 0.3;
-        }
-        100% {
-          bottom: 110%;
-          opacity: 0;
-          transform: translateX(-25px) scale(1.4);
-        }
-      }
-      @keyframes flare5 {
-        0% {
-          bottom: -90px;
-          opacity: 0;
-          transform: translateX(0) scale(0.3);
-        }
-        15% {
-          opacity: 0.8;
-        }
-        60% {
-          opacity: 0.3;
-        }
-        100% {
-          bottom: 110%;
-          opacity: 0;
-          transform: translateX(15px) scale(1);
-        }
-      }
-      @keyframes flare6 {
-        0% {
-          bottom: -70px;
-          opacity: 0;
-          transform: translateX(0) scale(0.25);
-        }
-        15% {
-          opacity: 0.85;
-        }
-        60% {
-          opacity: 0.35;
-        }
-        100% {
-          bottom: 110%;
-          opacity: 0;
-          transform: translateX(35px) scale(1.15);
-        }
-      }
-      @keyframes flare7 {
-        0% {
-          bottom: -110px;
-          opacity: 0;
-          transform: translateX(0) scale(0.35);
-        }
-        15% {
-          opacity: 0.7;
-        }
-        60% {
-          opacity: 0.25;
-        }
-        100% {
-          bottom: 110%;
-          opacity: 0;
-          transform: translateX(-30px) scale(1.25);
-        }
-      }
-
-      .dark-zone {
-        position: relative;
-        background: #1a2420;
-      }
-      .flare-container {
-        position: absolute;
-        inset: 0;
-        overflow: hidden;
-        pointer-events: none;
-        z-index: 1;
-      }
-      .flare {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(18px);
       }
 
       /* ---- HERO ---- */
@@ -219,125 +72,117 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #1a2420;
-        padding: 100px 24px 20px;
+        padding: 140px 24px 48px;
         text-align: center;
       }
 
       .hero-content {
-        position: relative;
-        z-index: 2;
-        max-width: 640px;
+        max-width: 680px;
       }
 
+      .hero-kicker {
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 2.4px;
+        text-transform: uppercase;
+        color: var(--pf-teal);
+        margin-bottom: 20px;
+      }
       .hero h1 {
-        font-family: "Outfit", sans-serif;
-        font-size: clamp(44px, 8.5vw, 62px);
-        font-weight: 800;
-        color: #f0ede8;
-        line-height: 1.05;
-        margin-bottom: 16px;
-        letter-spacing: -0.02em;
-        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+        font-family: "Lora", Georgia, serif;
+        font-size: clamp(40px, 8vw, 60px);
+        font-weight: 600;
+        color: var(--pf-ink);
+        line-height: 1.12;
+        margin-bottom: 20px;
+        letter-spacing: -0.01em;
+      }
+      .hero h1 em {
+        font-style: italic;
+        color: var(--pf-gold);
       }
       .hero-tagline {
-        font-size: clamp(16px, 3vw, 20px);
-        font-weight: 500;
-        color: rgba(240, 237, 232, 0.7);
-        line-height: 1.5;
-        margin-bottom: 24px;
-        max-width: 520px;
+        font-size: clamp(16px, 3vw, 19px);
+        font-weight: 400;
+        color: var(--pf-ink-light);
+        line-height: 1.6;
+        margin-bottom: 28px;
+        max-width: 540px;
         margin-left: auto;
         margin-right: auto;
       }
       .hero-sub {
-        margin-bottom: 20px;
-        font-size: 14px;
-        color: rgba(240, 237, 232, 0.5);
+        margin-bottom: 24px;
+        font-size: 13px;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: var(--pf-warm-gray);
       }
 
       .hero-cta {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        background: #2ebf8b;
-        color: #1a2420;
-        border: 2px solid #2ebf8b;
-        border-radius: 50px;
-        padding: 14px 32px;
-        font-size: 17px;
-        font-weight: 600;
+        background: var(--pf-teal);
+        color: var(--pf-white);
+        border: 1px solid var(--pf-teal);
+        border-radius: 10px;
+        padding: 15px 34px;
+        font-size: 16px;
+        font-weight: 500;
         font-family: inherit;
         cursor: pointer;
         text-decoration: none;
         white-space: nowrap;
         transition:
-          transform 0.15s ease,
-          box-shadow 0.2s ease,
           background 0.2s ease,
-          color 0.2s ease;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+          transform 0.15s ease,
+          box-shadow 0.2s ease;
+        box-shadow: 0 2px 12px rgba(26, 84, 80, 0.18);
       }
       .hero-cta:hover {
-        transform: translateY(-2px);
-        background: #1b7a5a;
-        color: #f0ede8;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        background: var(--pf-teal-mid);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(26, 84, 80, 0.22);
       }
       .hero-cta:active {
-        transform: scale(0.97);
+        transform: scale(0.98);
       }
 
       /* ---- SECTION BASE ---- */
       section {
-        padding: 60px 24px;
+        padding: 64px 24px;
       }
       .section-inner {
         max-width: 800px;
         margin: 0 auto;
       }
       .section-label {
-        font-size: 13px;
-        font-weight: 700;
+        font-size: 12px;
+        font-weight: 400;
         text-transform: uppercase;
-        letter-spacing: 2px;
-        color: #2ebf8b;
+        letter-spacing: 2.4px;
+        color: var(--pf-teal);
         margin-bottom: 16px;
       }
       .section-title {
-        font-family: "Outfit", sans-serif;
-        font-size: clamp(28px, 5vw, 40px);
-        font-weight: 700;
-        line-height: 1.2;
-        color: #f0ede8;
+        font-family: "Lora", Georgia, serif;
+        font-size: clamp(28px, 5vw, 38px);
+        font-weight: 600;
+        line-height: 1.22;
+        color: var(--pf-ink);
         margin-bottom: 20px;
-        letter-spacing: -0.5px;
       }
       .section-desc {
         font-size: 17px;
-        color: rgba(240, 237, 232, 0.6);
+        color: var(--pf-ink-light);
         line-height: 1.7;
-        max-width: 560px;
+        max-width: 580px;
       }
 
       /* ---- PROBLEM ---- */
       .problem {
-        background: transparent;
-        color: white;
-        padding-top: 28px;
-      }
-      .problem .section-inner {
-        position: relative;
-        z-index: 2;
-      }
-      .problem .section-label {
-        color: var(--flame-light);
-      }
-      .problem .section-title {
-        color: white;
-      }
-      .problem .section-desc {
-        color: rgba(255, 255, 255, 0.65);
+        padding-top: 32px;
       }
       .problem-moments {
         display: grid;
@@ -346,28 +191,29 @@
         margin-top: 40px;
       }
       .moment-card {
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 20px;
+        background: var(--pf-white);
+        border: 1px solid var(--pf-border);
+        border-left: 3px solid var(--pf-teal);
+        border-radius: 14px;
         padding: 24px;
       }
       .moment-card .moment-time {
-        font-size: 13px;
-        color: var(--flame-light);
-        font-weight: 600;
-        margin-bottom: 8px;
+        font-size: 11px;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        color: var(--pf-teal);
+        font-weight: 500;
+        margin-bottom: 10px;
       }
       .moment-card p {
+        font-family: "Lora", Georgia, serif;
         font-size: 17px;
-        color: rgba(255, 255, 255, 0.85);
+        color: var(--pf-ink-light);
         line-height: 1.6;
         font-style: italic;
       }
 
       /* ---- FEATURES ---- */
-      .features {
-        background: #1a2420;
-      }
       .feature-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -375,62 +221,45 @@
         margin-top: 48px;
       }
       .tool-card {
-        background: #fff9f4;
-        border-radius: 20px;
+        background: var(--pf-white);
+        border: 1px solid var(--pf-border);
+        border-top: 3px solid var(--pf-teal);
+        border-radius: 14px;
         padding: 32px 28px;
-        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
         transition:
           transform 0.2s ease,
           box-shadow 0.2s ease;
       }
       .tool-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
-      }
-      .tool-card.card-forward {
-        border-left: 4px solid #2ebf8b;
-      }
-      .tool-card.card-snap {
-        border-left: 4px solid #3a72b8;
-      }
-      .tool-card.card-week {
-        border-left: 4px solid #9b6ff0;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(28, 26, 20, 0.08);
       }
       .tool-label {
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 1.5px;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 1.8px;
         text-transform: uppercase;
-        margin-bottom: 8px;
-      }
-      .tool-label.label-forward {
-        color: #2ebf8b;
-      }
-      .tool-label.label-snap {
-        color: #3a72b8;
-      }
-      .tool-label.label-week {
-        color: #9b6ff0;
+        margin-bottom: 12px;
+        color: var(--pf-teal);
+        background: var(--pf-tag-bg);
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 6px;
       }
       .tool-card h3 {
-        font-family: "Outfit", sans-serif;
-        font-size: 24px;
-        font-weight: 800;
-        color: #1e2824;
+        font-family: "Lora", Georgia, serif;
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--pf-ink);
         margin-bottom: 12px;
-        letter-spacing: -0.3px;
       }
       .tool-card p {
-        font-family: "DM Sans", sans-serif;
-        font-size: 16px;
-        color: #5a6662;
-        line-height: 1.6;
+        font-size: 15px;
+        color: var(--pf-ink-light);
+        line-height: 1.65;
       }
 
       /* ---- HOW IT WORKS ---- */
-      .how-it-works {
-        background: #1a2420;
-      }
       .story-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -439,185 +268,180 @@
       }
       .story-panel {
         padding: 24px 0;
-        border-top: 3px solid rgba(46, 191, 139, 0.3);
+        border-top: 2px solid var(--pf-border);
       }
       .story-panel.panel-during,
       .story-panel.panel-after {
-        border-top-color: #2ebf8b;
+        border-top-color: var(--pf-teal);
       }
       .story-panel-label {
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 1.5px;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 1.8px;
         text-transform: uppercase;
-        color: #2ebf8b;
+        color: var(--pf-teal);
         margin-bottom: 12px;
       }
       .story-panel p {
-        font-family: "DM Sans", sans-serif;
-        font-size: 18px;
-        color: rgba(240, 237, 232, 0.8);
+        font-family: "Lora", Georgia, serif;
+        font-size: 17px;
+        color: var(--pf-ink-light);
         line-height: 1.7;
         font-style: italic;
       }
 
       /* ---- QUIET WIN ---- */
-      .running-empty {
-        background: #1a2420;
-        padding: 80px 24px;
+      .quiet-win {
+        padding: 88px 24px;
         text-align: center;
+        background: var(--pf-white);
+        border-top: 1px solid var(--pf-border);
+        border-bottom: 1px solid var(--pf-border);
       }
-      .running-empty-inner {
-        max-width: 720px;
+      .quiet-win-inner {
+        max-width: 680px;
         margin: 0 auto;
       }
-      .running-empty-quote {
-        font-family: "Outfit", sans-serif;
-        font-size: 22px;
-        font-weight: 600;
-        color: #f0ede8;
-        line-height: 1.5;
+      .quiet-win-quote {
+        font-family: "Lora", Georgia, serif;
+        font-size: clamp(22px, 4vw, 28px);
+        font-weight: 500;
+        color: var(--pf-ink);
+        line-height: 1.45;
       }
-      .running-empty-sub {
-        font-family: "DM Sans", sans-serif;
-        font-size: 18px;
-        color: rgba(255, 248, 240, 0.8);
-        margin-top: 24px;
+      .quiet-win-quote em {
+        font-style: italic;
+        color: var(--pf-gold);
       }
-      .running-empty-cta {
-        display: block;
-        color: #2ebf8b;
-        font-weight: 600;
+      .quiet-win-sub {
+        font-size: 17px;
+        color: var(--pf-ink-light);
+        margin-top: 20px;
+      }
+      .quiet-win-cta {
+        display: inline-block;
+        color: var(--pf-teal);
+        font-weight: 500;
         font-size: 16px;
-        margin-top: 32px;
+        margin-top: 28px;
         text-decoration: none;
+        border-bottom: 1px solid var(--pf-teal);
+        padding-bottom: 2px;
       }
-      .running-empty-cta:hover {
-        text-decoration: underline;
+      .quiet-win-cta:hover {
+        color: var(--pf-teal-mid);
       }
 
       /* ---- BETA ---- */
-      .pricing {
-        background: #1a2420;
-      }
-      .pricing-grid {
+      .beta-grid {
         display: grid;
         grid-template-columns: 1fr;
         gap: 20px;
         margin-top: 48px;
         max-width: 480px;
       }
-      .pricing-card {
-        background: #fff9f4;
-        border-radius: 24px;
-        padding: 36px 28px;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+      .beta-card {
+        background: var(--pf-white);
+        border-radius: 16px;
+        padding: 40px 32px;
         position: relative;
-        border: 1px solid #d5dad8;
+        border: 1px solid var(--pf-teal);
+        box-shadow: 0 6px 28px rgba(26, 84, 80, 0.1);
       }
-      .pricing-card.featured {
-        border: 2px solid #2ebf8b;
-        box-shadow: 0 4px 32px rgba(46, 191, 139, 0.2);
-      }
-      .pricing-badge {
+      .beta-badge {
         position: absolute;
         top: -12px;
         left: 28px;
-        background: #2ebf8b;
-        color: white;
-        font-size: 12px;
-        font-weight: 700;
+        background: var(--pf-gold);
+        color: var(--pf-white);
+        font-size: 11px;
+        font-weight: 600;
         padding: 4px 14px;
         border-radius: 20px;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 1.4px;
       }
-      .pricing-card h3 {
-        font-family: "Outfit", sans-serif;
-        font-size: 24px;
-        font-weight: 700;
+      .beta-card h3 {
+        font-family: "Lora", Georgia, serif;
+        font-size: 23px;
+        font-weight: 600;
         margin-bottom: 4px;
-        letter-spacing: -0.3px;
-        color: #1e2824;
+        color: var(--pf-ink);
       }
-      .pricing-price {
-        font-family: "Outfit", sans-serif;
+      .beta-price {
+        font-family: "Lora", Georgia, serif;
         font-size: 40px;
-        font-weight: 800;
-        color: #1e2824;
+        font-weight: 600;
+        color: var(--pf-ink);
         margin: 16px 0 4px;
-        letter-spacing: -1px;
       }
-      .pricing-price span {
-        font-size: 16px;
-        font-weight: 500;
-        color: #5a6662;
+      .beta-price span {
+        font-family: "Jost", sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        color: var(--pf-warm-gray);
       }
-      .pricing-subtitle {
+      .beta-subtitle {
         font-size: 14px;
-        color: #5a6662;
-        margin-bottom: 20px;
+        color: var(--pf-ink-light);
+        margin-bottom: 22px;
       }
-      .pricing-features {
+      .beta-features {
         list-style: none;
         padding: 0;
-        margin: 0 0 28px;
+        margin: 0 0 30px;
       }
-      .pricing-features li {
+      .beta-features li {
         font-size: 15px;
-        color: #5a6662;
+        color: var(--pf-ink-light);
         line-height: 1.6;
-        padding: 6px 0;
-        padding-left: 28px;
+        padding: 6px 0 6px 28px;
         position: relative;
       }
-      .pricing-features li::before {
+      .beta-features li::before {
         content: "\2713";
         position: absolute;
         left: 0;
-        color: #2ebf8b;
-        font-weight: 700;
+        color: var(--pf-teal);
+        font-weight: 600;
       }
-      .pricing-cta {
+      .beta-cta {
         display: inline-block;
         width: 100%;
         text-align: center;
         padding: 16px;
-        border-radius: 14px;
+        border-radius: 10px;
         border: none;
         font-size: 16px;
-        font-weight: 600;
+        font-weight: 500;
         font-family: inherit;
         cursor: pointer;
         text-decoration: none;
-        transition: transform 0.15s ease;
+        background: var(--pf-teal);
+        color: var(--pf-white);
+        transition:
+          background 0.2s ease,
+          transform 0.15s ease;
       }
-      .pricing-cta:hover {
+      .beta-cta:hover {
+        background: var(--pf-teal-mid);
         transform: translateY(-1px);
       }
-      .pricing-cta.cta-premium {
-        background: #2ebf8b;
-        color: white;
-        box-shadow: 0 4px 14px rgba(46, 191, 139, 0.35);
-      }
-      .pricing-note {
+      .beta-note {
         font-size: 13px;
-        color: rgba(240, 237, 232, 0.5);
+        color: var(--pf-warm-gray);
         margin-top: 20px;
         line-height: 1.6;
       }
 
       /* ---- FAQ (ACCORDION) ---- */
-      .faq {
-        background: #1a2420;
-      }
       .faq-list {
         margin-top: 48px;
         display: grid;
         gap: 0;
       }
       .faq-item {
-        border-bottom: 1px solid rgba(255, 249, 244, 0.15);
+        border-bottom: 1px solid var(--pf-border);
       }
       .faq-item:last-child {
         border-bottom: none;
@@ -632,15 +456,14 @@
         border: none;
         cursor: pointer;
         padding: 24px 0;
-        font-family: "Outfit", sans-serif;
+        font-family: "Lora", Georgia, serif;
         font-size: 18px;
-        font-weight: 700;
-        color: #f0ede8;
+        font-weight: 600;
+        color: var(--pf-ink);
         text-align: left;
-        letter-spacing: -0.2px;
       }
       .faq-question:hover {
-        color: #2ebf8b;
+        color: var(--pf-teal);
       }
       .faq-icon {
         width: 28px;
@@ -650,7 +473,7 @@
         align-items: center;
         justify-content: center;
         font-size: 20px;
-        color: rgba(240, 237, 232, 0.4);
+        color: var(--pf-warm-gray);
         transition: transform 0.3s ease;
       }
       .faq-item.open .faq-icon {
@@ -670,21 +493,39 @@
       }
       .faq-answer p {
         font-size: 15px;
-        color: rgba(240, 237, 232, 0.7);
+        color: var(--pf-ink-light);
         line-height: 1.7;
       }
       .faq-answer a {
-        color: #2ebf8b;
+        color: var(--pf-teal);
         text-decoration: none;
+        border-bottom: 1px solid var(--pf-teal);
       }
       .faq-answer a:hover {
-        text-decoration: underline;
+        color: var(--pf-teal-mid);
+      }
+
+      /* ---- FINAL CTA ---- */
+      .final-cta {
+        padding: 88px 24px;
+        text-align: center;
+      }
+      .final-cta-intro {
+        font-size: 12px;
+        letter-spacing: 2.4px;
+        text-transform: uppercase;
+        color: var(--pf-teal);
+        margin-bottom: 16px;
+      }
+      .final-cta .section-title em {
+        font-style: italic;
+        color: var(--pf-gold);
       }
 
       /* ---- FOOTER ---- */
       footer {
-        background: #151e1a;
-        color: rgba(240, 237, 232, 0.5);
+        background: var(--pf-ink);
+        color: rgba(244, 242, 238, 0.55);
         padding: 48px 24px;
       }
       .footer-inner {
@@ -695,42 +536,41 @@
         gap: 40px;
       }
       .footer-brand .footer-logo {
-        font-family: "Outfit", sans-serif;
+        font-family: "Lora", Georgia, serif;
         font-size: 20px;
-        font-weight: 700;
-        color: #f0ede8;
+        font-weight: 600;
+        color: var(--pf-stone);
         margin-bottom: 8px;
       }
       .footer-brand .footer-tagline {
         font-size: 14px;
-        color: rgba(240, 237, 232, 0.4);
+        color: rgba(244, 242, 238, 0.4);
         line-height: 1.5;
       }
       .footer-col h4 {
-        font-family: "Outfit", sans-serif;
-        font-size: 13px;
-        font-weight: 700;
-        color: rgba(240, 237, 232, 0.5);
+        font-size: 11px;
+        font-weight: 500;
+        color: rgba(244, 242, 238, 0.5);
         text-transform: uppercase;
-        letter-spacing: 1.5px;
+        letter-spacing: 1.8px;
         margin-bottom: 14px;
       }
       .footer-col a {
         display: block;
         font-size: 14px;
-        color: rgba(240, 237, 232, 0.45);
+        color: rgba(244, 242, 238, 0.5);
         text-decoration: none;
         margin-bottom: 10px;
         transition: color 0.2s;
       }
       .footer-col a:hover {
-        color: #2ebf8b;
+        color: var(--pf-gold);
       }
       .footer-bottom {
         max-width: 800px;
         margin: 32px auto 0;
         padding-top: 24px;
-        border-top: 1px solid rgba(255, 249, 244, 0.1);
+        border-top: 1px solid rgba(244, 242, 238, 0.12);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -739,7 +579,7 @@
       }
       .footer-bottom p {
         font-size: 12px;
-        color: rgba(240, 237, 232, 0.25);
+        color: rgba(244, 242, 238, 0.3);
       }
 
       /* ---- NAV ---- */
@@ -749,19 +589,21 @@
         left: 0;
         right: 0;
         z-index: 100;
-        padding: 16px 24px;
+        padding: 14px 24px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         transition:
           background 0.3s ease,
-          box-shadow 0.3s ease;
+          box-shadow 0.3s ease,
+          border-color 0.3s ease;
+        border-bottom: 1px solid transparent;
       }
       .nav.scrolled {
-        background: rgba(26, 36, 32, 0.92);
+        background: rgba(244, 242, 238, 0.92);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+        border-bottom-color: var(--pf-border);
       }
       .nav-brand {
         display: flex;
@@ -769,79 +611,50 @@
         gap: 10px;
         text-decoration: none;
       }
-      .nav-logo {
-        width: 36px;
-        height: 36px;
-        background: #1a1a2e;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
       .nav-logo img {
-        animation: flamePulse 3s ease-in-out infinite;
+        display: block;
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
       }
       .nav-name {
-        font-family: "Outfit", sans-serif;
-        font-size: 18px;
-        font-weight: 700;
-        color: #f0ede8;
-        transition: color 0.3s ease;
+        font-family: "Lora", Georgia, serif;
+        font-size: 19px;
+        font-weight: 600;
+        color: var(--pf-ink);
       }
       .nav-link {
-        font-family: "DM Sans", sans-serif;
         font-size: 14px;
-        color: #f0ede8;
+        color: var(--pf-ink-light);
         text-decoration: none;
         margin-right: 24px;
         display: none;
-        transition: color 0.3s ease;
+        transition: color 0.2s ease;
       }
       .nav-link:hover {
-        color: rgba(240, 237, 232, 0.7);
+        color: var(--pf-teal);
       }
       .nav-cta {
-        background: #2ebf8b;
-        color: #1a2420;
-        border: 2px solid #2ebf8b;
-        border-radius: 24px;
-        padding: 10px 20px;
+        background: var(--pf-teal);
+        color: var(--pf-white);
+        border: 1px solid var(--pf-teal);
+        border-radius: 8px;
+        padding: 9px 18px;
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 500;
         font-family: inherit;
         cursor: pointer;
         text-decoration: none;
         transition:
-          transform 0.15s ease,
-          box-shadow 0.2s ease,
           background 0.2s ease,
-          color 0.2s ease;
+          transform 0.15s ease;
       }
       .nav-cta:hover {
+        background: var(--pf-teal-mid);
         transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(46, 191, 139, 0.35);
       }
 
       /* ---- ANIMATIONS ---- */
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(24px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      @keyframes flamePulse {
-        0%,
-        100% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.05);
-        }
-      }
       .fade-up {
         opacity: 1;
         transform: translateY(0);
@@ -856,15 +669,6 @@
       .fade-up.visible {
         opacity: 1;
         transform: translateY(0);
-      }
-
-      /* ---- FINAL CTA INTRO ---- */
-      .final-cta-intro {
-        font-family: "Outfit", sans-serif;
-        font-size: 22px;
-        font-weight: 700;
-        color: #f0ede8;
-        margin-bottom: 16px;
       }
 
       /* ---- RESPONSIVE ---- */
@@ -888,12 +692,6 @@
         .story-grid {
           grid-template-columns: 1fr 1fr 1fr;
           gap: 32px;
-        }
-        .running-empty-quote {
-          font-size: 28px;
-        }
-        .final-cta-intro {
-          font-size: 28px;
         }
       }
 
@@ -920,240 +718,79 @@
       <a href="#" class="nav-brand">
         <div class="nav-logo">
           <img
-            src="/images/parentflare-logo.png"
+            src="/images/parentflare-mark.png"
             alt="ParentFlare"
-            width="36"
-            height="36"
-            style="display: block; border-radius: 10px"
+            width="34"
+            height="34"
           />
         </div>
         <span class="nav-name">ParentFlare</span>
       </a>
-      <a href="#how-it-works" class="nav-link">How it works</a>
-      <a href="https://testflight.apple.com/join/pB9h2MFD" class="nav-cta"
-        >Get the Beta</a
-      >
+      <div>
+        <a href="#how-it-works" class="nav-link">How it works</a>
+        <a href="https://testflight.apple.com/join/pB9h2MFD" class="nav-cta"
+          >Get the Beta</a
+        >
+      </div>
     </nav>
 
-    <!-- HERO + PROBLEM (shared dark zone for particles) -->
-    <div class="dark-zone">
-      <div class="flare-container">
-        <div
-          class="flare"
-          style="
-            left: 5%;
-            width: 50px;
-            height: 50px;
-            background: radial-gradient(
-              circle,
-              #2ebf8b 0%,
-              #1b7a5a 50%,
-              transparent 100%
-            );
-            animation: flare1 4.5s ease-out infinite;
-          "
-        ></div>
-        <div
-          class="flare"
-          style="
-            left: 18%;
-            width: 65px;
-            height: 65px;
-            background: radial-gradient(
-              circle,
-              #7b2d8e 0%,
-              #a855c8 50%,
-              transparent 100%
-            );
-            animation: flare2 5.5s ease-out infinite;
-            animation-delay: 1.2s;
-          "
-        ></div>
-        <div
-          class="flare"
-          style="
-            left: 32%;
-            width: 45px;
-            height: 45px;
-            background: radial-gradient(
-              circle,
-              rgba(240, 237, 232, 0.8) 0%,
-              rgba(240, 237, 232, 0.3) 50%,
-              transparent 100%
-            );
-            animation: flare3 4s ease-out infinite;
-            animation-delay: 2s;
-          "
-        ></div>
-        <div
-          class="flare"
-          style="
-            left: 45%;
-            width: 55px;
-            height: 55px;
-            background: radial-gradient(
-              circle,
-              #2ebf8b 0%,
-              #2b5c94 50%,
-              transparent 100%
-            );
-            animation: flare6 5s ease-out infinite;
-            animation-delay: 0.8s;
-          "
-        ></div>
-        <div
-          class="flare"
-          style="
-            left: 58%;
-            width: 40px;
-            height: 40px;
-            background: radial-gradient(
-              circle,
-              #2b5c94 0%,
-              #4a82c4 50%,
-              transparent 100%
-            );
-            animation: flare4 6s ease-out infinite;
-            animation-delay: 3s;
-          "
-        ></div>
-        <div
-          class="flare"
-          style="
-            left: 70%;
-            width: 60px;
-            height: 60px;
-            background: radial-gradient(
-              circle,
-              rgba(240, 237, 232, 0.6) 0%,
-              rgba(240, 237, 232, 0.2) 50%,
-              transparent 100%
-            );
-            animation: flare7 5.5s ease-out infinite;
-            animation-delay: 1.5s;
-          "
-        ></div>
-        <div
-          class="flare"
-          style="
-            left: 82%;
-            width: 50px;
-            height: 50px;
-            background: radial-gradient(
-              circle,
-              #2ebf8b 0%,
-              #1b7a5a 50%,
-              transparent 100%
-            );
-            animation: flare5 5s ease-out infinite;
-            animation-delay: 2.5s;
-          "
-        ></div>
-        <div
-          class="flare"
-          style="
-            left: 12%;
-            width: 35px;
-            height: 35px;
-            background: radial-gradient(
-              circle,
-              #7b2d8e 0%,
-              #a855c8 50%,
-              transparent 100%
-            );
-            animation: flare3 6.5s ease-out infinite;
-            animation-delay: 3.5s;
-          "
-        ></div>
-        <div
-          class="flare"
-          style="
-            left: 65%;
-            width: 45px;
-            height: 45px;
-            background: radial-gradient(
-              circle,
-              #2b5c94 0%,
-              #4a82c4 50%,
-              transparent 100%
-            );
-            animation: flare1 7s ease-out infinite;
-            animation-delay: 4s;
-          "
-        ></div>
-        <div
-          class="flare"
-          style="
-            left: 92%;
-            width: 40px;
-            height: 40px;
-            background: radial-gradient(
-              circle,
-              rgba(240, 237, 232, 0.7) 0%,
-              rgba(240, 237, 232, 0.3) 50%,
-              transparent 100%
-            );
-            animation: flare6 4.5s ease-out infinite;
-            animation-delay: 0.3s;
-          "
-        ></div>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-kicker">For the family calendar</p>
+        <h1>Every school email, <em>handled.</em></h1>
+        <p class="hero-tagline">
+          Forward the newsletter. Snap the flyer. ParentFlare pulls out every
+          event, deadline, and permission slip &mdash; and puts your whole week
+          on the family calendar.
+        </p>
+        <p class="hero-sub">Free while in beta &middot; iPhone</p>
+        <a href="https://testflight.apple.com/join/pB9h2MFD" class="hero-cta"
+          >Get the beta &rarr;</a
+        >
       </div>
+    </section>
 
-      <section class="hero">
-        <div class="hero-content">
-          <h1>Every school email, handled.</h1>
-          <p class="hero-tagline">
-            Forward the newsletter. Snap the flyer. ParentFlare pulls out every
-            event, deadline, and permission slip &mdash; and puts your whole
-            week on the family calendar.
-          </p>
-          <p class="hero-sub">Free while in beta &middot; iPhone</p>
-          <a href="https://testflight.apple.com/join/pB9h2MFD" class="hero-cta"
-            >Get the beta &rarr;</a
-          >
-        </div>
-      </section>
-
-      <section class="problem">
-        <div class="section-inner">
-          <div class="section-label fade-up">Sound familiar?</div>
-          <h2 class="section-title fade-up">The school-email avalanche.</h2>
-          <p class="section-desc fade-up">
-            Eleven emails a week from the school. A flyer on the fridge. A date
-            in the group text. Somewhere in there: picture day, a half day, a
-            form due Friday. Keeping it all straight is a part-time job nobody
-            hired you for.
-          </p>
-          <div class="problem-moments">
-            <div class="moment-card fade-up">
-              <div class="moment-time">8:52 PM &middot; Sunday</div>
-              <p>
-                "Eleven school emails this week. Which one had the picture day
-                form?"
-              </p>
-            </div>
-            <div class="moment-card fade-up">
-              <div class="moment-time">7:40 AM &middot; Tuesday</div>
-              <p>"Wait &mdash; today's a half day?"</p>
-            </div>
-            <div class="moment-card fade-up">
-              <div class="moment-time">5:15 PM &middot; Thursday</div>
-              <p>
-                "The flyer's on the fridge. The date's in my head. Neither is on
-                the calendar."
-              </p>
-            </div>
-            <div class="moment-card fade-up">
-              <div class="moment-time">9:30 PM &middot; Wednesday</div>
-              <p>
-                "Did we sign the permission slip? And who's covering pickup on
-                Friday?"
-              </p>
-            </div>
+    <!-- PROBLEM -->
+    <section class="problem">
+      <div class="section-inner">
+        <div class="section-label fade-up">Sound familiar?</div>
+        <h2 class="section-title fade-up">The school-email avalanche.</h2>
+        <p class="section-desc fade-up">
+          Eleven emails a week from the school. A flyer on the fridge. A date in
+          the group text. Somewhere in there: picture day, a half day, a form
+          due Friday. Keeping it all straight is a part-time job nobody hired
+          you for.
+        </p>
+        <div class="problem-moments">
+          <div class="moment-card fade-up">
+            <div class="moment-time">8:52 PM &middot; Sunday</div>
+            <p>
+              "Eleven school emails this week. Which one had the picture day
+              form?"
+            </p>
+          </div>
+          <div class="moment-card fade-up">
+            <div class="moment-time">7:40 AM &middot; Tuesday</div>
+            <p>"Wait &mdash; today's a half day?"</p>
+          </div>
+          <div class="moment-card fade-up">
+            <div class="moment-time">5:15 PM &middot; Thursday</div>
+            <p>
+              "The flyer's on the fridge. The date's in my head. Neither is on
+              the calendar."
+            </p>
+          </div>
+          <div class="moment-card fade-up">
+            <div class="moment-time">9:30 PM &middot; Wednesday</div>
+            <p>
+              "Did we sign the permission slip? And who's covering pickup on
+              Friday?"
+            </p>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
     <!-- FEATURES -->
     <section class="features">
@@ -1161,8 +798,8 @@
         <div class="section-label fade-up">Chaos in, calendar out</div>
         <h2 class="section-title fade-up">Send it in. Any way it arrives.</h2>
         <div class="feature-grid">
-          <div class="tool-card card-forward fade-up">
-            <div class="tool-label label-forward">Forward</div>
+          <div class="tool-card fade-up">
+            <div class="tool-label">Forward</div>
             <h3>One forwarding address.</h3>
             <p>
               Forward any school email to your family's ParentFlare address.
@@ -1170,16 +807,16 @@
               you finish your coffee.
             </p>
           </div>
-          <div class="tool-card card-snap fade-up">
-            <div class="tool-label label-snap">Snap</div>
+          <div class="tool-card fade-up">
+            <div class="tool-label">Snap</div>
             <h3>Got a flyer? Snap it.</h3>
             <p>
               Paper flyers, permission slips, screenshots of the class group
               text. Take a photo and it lands in your week like everything else.
             </p>
           </div>
-          <div class="tool-card card-week fade-up">
-            <div class="tool-label label-week">Your week</div>
+          <div class="tool-card fade-up">
+            <div class="tool-label">Your week</div>
             <h3>One glance. Whole week.</h3>
             <p>
               A Today view of what's next for every kid, who's covering what,
@@ -1191,17 +828,16 @@
     </section>
 
     <!-- QUIET WIN -->
-    <section class="running-empty">
-      <div class="running-empty-inner">
-        <p class="running-empty-quote fade-up">
-          You didn't miss picture day.<br />You didn't miss the field trip form.
+    <section class="quiet-win">
+      <div class="quiet-win-inner">
+        <p class="quiet-win-quote fade-up">
+          You didn't miss picture day.<br />You didn't miss the field trip
+          form.<br /><em>Nobody asked you to remember either.</em>
         </p>
-        <p class="running-empty-sub fade-up">
-          And nobody asked you to remember either. That's the whole point.
-        </p>
+        <p class="quiet-win-sub fade-up">That's the whole point.</p>
         <a
           href="https://testflight.apple.com/join/pB9h2MFD"
-          class="running-empty-cta fade-up"
+          class="quiet-win-cta fade-up"
           >Get the beta &rarr;</a
         >
       </div>
@@ -1239,7 +875,7 @@
     </section>
 
     <!-- BETA -->
-    <section class="pricing" id="beta">
+    <section class="beta" id="beta">
       <div class="section-inner">
         <div class="section-label fade-up">Friends &amp; family beta</div>
         <h2 class="section-title fade-up">Free while we build it together.</h2>
@@ -1248,15 +884,15 @@
           Everything is included, nothing costs a dime, and what you tell us
           shapes what we build next.
         </p>
-        <div class="pricing-grid">
-          <div class="pricing-card featured fade-up">
-            <div class="pricing-badge">Beta</div>
+        <div class="beta-grid">
+          <div class="beta-card fade-up">
+            <div class="beta-badge">Beta</div>
             <h3>Everything included</h3>
-            <div class="pricing-price">$0 <span>during beta</span></div>
-            <div class="pricing-subtitle">
+            <div class="beta-price">$0 <span>during beta</span></div>
+            <div class="beta-subtitle">
               For the families helping us get it right
             </div>
-            <ul class="pricing-features">
+            <ul class="beta-features">
               <li>Your family's forwarding address for school email</li>
               <li>Snap flyers, permission slips, and screenshots</li>
               <li>Google Calendar sync for the whole family</li>
@@ -1266,12 +902,12 @@
             </ul>
             <a
               href="https://testflight.apple.com/join/pB9h2MFD"
-              class="pricing-cta cta-premium"
+              class="beta-cta"
               >Join the beta on TestFlight</a
             >
           </div>
         </div>
-        <p class="pricing-note fade-up">
+        <p class="beta-note fade-up">
           iPhone only for now &middot; Uses Apple's free TestFlight app &middot;
           Android and web are on the list.
         </p>
@@ -1394,13 +1030,11 @@
     </section>
 
     <!-- FINAL CTA -->
-    <section
-      style="background: #1a2420; padding: 80px 24px; text-align: center"
-    >
+    <section class="final-cta">
       <div class="section-inner">
-        <p class="final-cta-intro fade-up">The fridge door isn't a system.</p>
+        <p class="final-cta-intro fade-up">The fridge door isn't a system</p>
         <h2 class="section-title fade-up" style="margin-bottom: 12px">
-          Send up the flare.
+          Send up the <em>flare.</em>
         </h2>
         <p
           class="section-desc fade-up"
@@ -1426,10 +1060,10 @@
             style="display: flex; align-items: center; gap: 10px"
           >
             <img
-              src="/images/parentflare-logo.png"
+              src="/images/parentflare-mark.png"
               alt="ParentFlare"
-              width="32"
-              height="32"
+              width="30"
+              height="30"
               style="display: block; border-radius: 8px"
             />
             ParentFlare
@@ -1461,14 +1095,14 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>Made with 🔥 by a dad of two boys.</p>
+        <p>Made by a dad of two boys.</p>
         <p>&copy; 2026 ParentFlare</p>
       </div>
     </footer>
 
     <!-- Scripts -->
     <script>
-      // Nav scroll effect — always dark canvas, frosted glass on scroll
+      // Nav scroll effect — stone frosted glass on scroll
       const nav = document.getElementById("nav");
 
       function updateNav() {
