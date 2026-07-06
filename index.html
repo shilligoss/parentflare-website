@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="ParentFlare absorbs the knowing, tracking, and remembering of family life — school, sports, birthdays, all of it — and hands both of you one clear, shared week."
+      content="ParentFlare is for parents who run the week together. Forward the school email, screenshot the team text, snap the birthday invite — everything comes back as a plan with names on it, on one week both of you see."
     />
-    <meta property="og:title" content="ParentFlare — Family life, handled." />
+    <meta property="og:title" content="ParentFlare — Yours. Mine. Handled." />
     <meta
       property="og:description"
-      content="Forward the email. Snap the invite. Every event, deadline, and to-do lands on a week both of you can see."
+      content="Forward it, screenshot it, snap it. Everything comes back as a plan with names on it — on one week both of you see."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://parentflare.com" />
-    <title>ParentFlare — Family life, handled.</title>
+    <title>ParentFlare — Yours. Mine. Handled.</title>
     <link rel="icon" type="image/png" href="/images/favicon.png" />
     <link rel="apple-touch-icon" href="/images/parentflare-mark.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -144,6 +144,29 @@
       }
       .hero-cta:active {
         transform: scale(0.98);
+      }
+
+      /* ---- INTAKE STRIP ---- */
+      .intake-strip {
+        margin-top: 36px;
+      }
+      .intake-ways {
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: var(--pf-ink-light);
+      }
+      .intake-ways span {
+        color: var(--pf-teal);
+        margin: 0 6px;
+      }
+      .intake-promise {
+        font-family: "Lora", Georgia, serif;
+        font-style: italic;
+        font-size: 15px;
+        color: var(--pf-warm-gray);
+        margin-top: 8px;
       }
 
       /* ---- SECTION BASE ---- */
@@ -734,17 +757,25 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-content">
-        <p class="hero-kicker">For the parent who keeps it all in their head</p>
-        <h1>The knowing, the tracking, the remembering. <em>Handled.</em></h1>
+        <p class="hero-kicker">For parents who run the week together</p>
+        <h1>Yours. Mine. <em>Handled.</em></h1>
         <p class="hero-tagline">
-          School newsletters, team schedules, birthday invites &mdash; forward
-          the email or snap the flyer, and it all becomes one clear, shared plan
-          for the week. Both of you see it. Nothing slips.
+          Forward the school email, screenshot the team text, snap the birthday
+          invite. Everything comes back as a plan with names on it &mdash; who's
+          driving, who's buying, who's covering &mdash; on one week both of you
+          see.
         </p>
         <p class="hero-sub">Free while in beta &middot; iPhone</p>
         <a href="https://testflight.apple.com/join/pB9h2MFD" class="hero-cta"
           >Get the beta &rarr;</a
         >
+        <div class="intake-strip">
+          <p class="intake-ways">
+            Forward the email <span>&middot;</span> Screenshot the text
+            <span>&middot;</span> Snap the flyer
+          </p>
+          <p class="intake-promise">We take it from there.</p>
+        </div>
       </div>
     </section>
 
@@ -1078,7 +1109,7 @@
             ParentFlare
           </div>
           <p class="footer-tagline">
-            The family calendar that fills itself in.
+            The family calendar you run together.
           </p>
         </div>
         <div class="footer-col">
