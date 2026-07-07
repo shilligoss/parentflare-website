@@ -1,136 +1,468 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ParentFlare Terms of Service.">
-  <title>Terms of Service — ParentFlare</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --flame: #FF6B35;
-      --flame-deep: #E85A2A;
-      --charcoal: #1A1A2E;
-      --warm-gray: #2D2D3F;
-      --soft-gray: #6B6B7B;
-      --cream: #FFF8F0;
-      --warm-white: #FFF5EB;
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', -apple-system, system-ui, sans-serif;
-      color: var(--charcoal);
-      background: var(--cream);
-      -webkit-font-smoothing: antialiased;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ParentFlare Terms of Service." />
+    <title>Terms of Service — ParentFlare</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/parentflare-mark.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --pf-teal: #1a5450;
+        --pf-teal-mid: #246460;
+        --pf-gold: #c8920a;
+        --pf-stone: #f4f2ee;
+        --pf-white: #ffffff;
+        --pf-ink: #1c1a14;
+        --pf-ink-light: #3a3428;
+        --pf-warm-gray: #a8a498;
+        --pf-border: #ddd9d0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family:
+          "Jost",
+          -apple-system,
+          system-ui,
+          sans-serif;
+        color: var(--pf-ink);
+        background: var(--pf-stone);
+        -webkit-font-smoothing: antialiased;
+      }
 
-    /* NAV */
-    .nav { padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; background: rgba(250,248,245,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(26,26,46,0.06); }
-    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo { width: 36px; height: 36px; background: #1A1A2E; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
-    .nav-name { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 700; color: var(--charcoal); }
-    .nav-cta { background: var(--flame); color: white; border: none; border-radius: 12px; padding: 10px 20px; font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer; text-decoration: none; transition: transform 0.15s ease; }
-    .nav-cta:hover { transform: translateY(-1px); }
+      /* NAV */
+      .nav {
+        padding: 14px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(244, 242, 238, 0.92);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--pf-border);
+      }
+      .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .nav-logo img {
+        display: block;
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+      }
+      .nav-name {
+        font-family: "Lora", Georgia, serif;
+        font-size: 19px;
+        font-weight: 600;
+        color: var(--pf-ink);
+      }
+      .nav-cta {
+        background: var(--pf-teal);
+        color: var(--pf-white);
+        border: 1px solid var(--pf-teal);
+        border-radius: 8px;
+        padding: 9px 18px;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: inherit;
+        cursor: pointer;
+        text-decoration: none;
+        transition:
+          background 0.2s ease,
+          transform 0.15s ease;
+      }
+      .nav-cta:hover {
+        background: var(--pf-teal-mid);
+        transform: translateY(-1px);
+      }
 
-    /* CONTENT */
-    .legal-page { max-width: 720px; margin: 0 auto; padding: 60px 24px 80px; }
-    .legal-page h1 { font-family: 'Outfit', sans-serif; font-size: 36px; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; letter-spacing: -0.5px; }
-    .legal-updated { font-size: 13px; color: var(--soft-gray); margin-bottom: 40px; }
-    .legal-page h2 { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 700; color: var(--charcoal); margin: 36px 0 10px; letter-spacing: -0.2px; }
-    .legal-page p { font-size: 15px; color: var(--warm-gray); line-height: 1.8; margin-bottom: 12px; }
-    .legal-page a { color: var(--flame); text-decoration: none; }
-    .legal-page a:hover { text-decoration: underline; }
+      /* CONTENT */
+      .legal-page {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 60px 24px 80px;
+      }
+      .legal-page h1 {
+        font-family: "Lora", Georgia, serif;
+        font-size: 36px;
+        font-weight: 600;
+        color: var(--pf-ink);
+        margin-bottom: 8px;
+      }
+      .legal-updated {
+        font-size: 13px;
+        color: var(--pf-warm-gray);
+        margin-bottom: 40px;
+        letter-spacing: 0.4px;
+      }
+      .legal-page h2 {
+        font-family: "Lora", Georgia, serif;
+        font-size: 21px;
+        font-weight: 600;
+        color: var(--pf-ink);
+        margin: 36px 0 10px;
+      }
+      .legal-page p {
+        font-size: 15px;
+        color: var(--pf-ink-light);
+        line-height: 1.8;
+        margin-bottom: 12px;
+      }
+      .legal-page ul {
+        margin: 0 0 12px 20px;
+      }
+      .legal-page ul li {
+        font-size: 15px;
+        color: var(--pf-ink-light);
+        line-height: 1.8;
+        margin-bottom: 4px;
+      }
+      .legal-page a {
+        color: var(--pf-teal);
+        text-decoration: none;
+        border-bottom: 1px solid var(--pf-teal);
+      }
+      .legal-page a:hover {
+        color: var(--pf-teal-mid);
+      }
+      .legal-page strong {
+        color: var(--pf-ink);
+        font-weight: 600;
+      }
 
-    /* FOOTER */
-    footer { background: var(--charcoal); color: rgba(255,255,255,0.5); padding: 48px 24px; }
-    .footer-inner { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; }
-    .footer-brand .footer-logo { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 700; color: white; margin-bottom: 8px; }
-    .footer-brand .footer-tagline { font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.5; }
-    .footer-col h4 { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 14px; }
-    .footer-col a { display: block; font-size: 14px; color: rgba(255,255,255,0.45); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
-    .footer-col a:hover { color: white; }
-    .footer-bottom { max-width: 800px; margin: 32px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
-    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.25); }
-    @media (max-width: 640px) {
-      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .footer-brand { grid-column: 1 / -1; }
-    }
-  </style>
-</head>
-<body>
+      /* FOOTER */
+      footer {
+        background: var(--pf-ink);
+        color: rgba(244, 242, 238, 0.55);
+        padding: 48px 24px;
+      }
+      .footer-inner {
+        max-width: 800px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: 40px;
+      }
+      .footer-brand .footer-logo {
+        font-family: "Lora", Georgia, serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--pf-stone);
+        margin-bottom: 8px;
+      }
+      .footer-brand .footer-tagline {
+        font-size: 14px;
+        color: rgba(244, 242, 238, 0.4);
+        line-height: 1.5;
+      }
+      .footer-col h4 {
+        font-size: 11px;
+        font-weight: 500;
+        color: rgba(244, 242, 238, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 1.8px;
+        margin-bottom: 14px;
+      }
+      .footer-col a {
+        display: block;
+        font-size: 14px;
+        color: rgba(244, 242, 238, 0.5);
+        text-decoration: none;
+        margin-bottom: 10px;
+        transition: color 0.2s;
+      }
+      .footer-col a:hover {
+        color: var(--pf-gold);
+      }
+      .footer-bottom {
+        max-width: 800px;
+        margin: 32px auto 0;
+        padding-top: 24px;
+        border-top: 1px solid rgba(244, 242, 238, 0.12);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .footer-bottom p {
+        font-size: 12px;
+        color: rgba(244, 242, 238, 0.3);
+      }
+      @media (max-width: 640px) {
+        .footer-inner {
+          grid-template-columns: 1fr 1fr;
+          gap: 32px;
+        }
+        .footer-brand {
+          grid-column: 1 / -1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="/" class="nav-brand">
+        <div class="nav-logo">
+          <img
+            src="/images/parentflare-mark.png"
+            alt="ParentFlare"
+            width="34"
+            height="34"
+          />
+        </div>
+        <span class="nav-name">ParentFlare</span>
+      </a>
+      <a href="https://testflight.apple.com/join/QZ3VXNzN" class="nav-cta"
+        >Get the Beta</a
+      >
+    </nav>
 
-  <nav class="nav">
-    <a href="/" class="nav-brand">
-      <div class="nav-logo">
-        <svg width="20" height="24" viewBox="0 0 80 100" fill="none"><defs><linearGradient id="navFl" x1="20" y1="90" x2="55" y2="8" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B35"/><stop offset="70%" stop-color="#E83D5E"/><stop offset="100%" stop-color="#D62259"/></linearGradient></defs><path d="M40 4C40 4 16 32 16 52C16 66 24 78 36 83C31 74 29 64 36 52C43 40 47 32 40 16C50 30 64 42 64 58C64 72 54 83 40 88C58 83 68 70 68 52C68 30 40 4 40 4Z" fill="url(#navFl)"/><ellipse cx="40" cy="62" rx="7" ry="6.5" fill="#FFD23F" opacity="0.9"/></svg>
-      </div>
-      <span class="nav-name">ParentFlare</span>
-    </a>
-    <a href="https://testflight.apple.com/join/pB9h2MFD" class="nav-cta">Get the Beta</a>
-  </nav>
+    <div class="legal-page">
+      <h1>Terms of Service</h1>
+      <p class="legal-updated">Last updated: July 6, 2026</p>
 
-  <div class="legal-page">
-    <h1>Terms of Service</h1>
-    <p class="legal-updated">Last updated: February 22, 2026</p>
+      <p>
+        These Terms of Service govern your use of ParentFlare &mdash; the app,
+        the website, and your family's email forwarding address. By creating an
+        account or using the service, you agree to these terms.
+      </p>
 
-    <h2>What ParentFlare Is</h2>
-    <p>ParentFlare is a web-based application that provides parents with a curated activity library, a custom activity generator, coaching scripts, and a personalized trip and day planner (Plan my time). The service is available at <a href="https://testflight.apple.com/join/pB9h2MFD">TestFlight beta</a> and described at <a href="https://parentflare.com">parentflare.com</a>.</p>
+      <h2>1. What ParentFlare Is</h2>
 
-    <h2>What ParentFlare Is Not</h2>
-    <p>ParentFlare is not a medical, therapeutic, psychological, or clinical service. The activities and parenting scripts provided are general suggestions based on common child development principles. They are not a substitute for professional advice from a pediatrician, therapist, psychologist, or other licensed healthcare provider. If your child has specific medical, behavioral, or developmental needs, please consult a qualified professional.</p>
+      <p>
+        ParentFlare turns the school emails, flyers, photos, and notes you send
+        it into an organized family schedule: calendar events, deadlines, and
+        action items that you review and approve. It is a tool for parents and
+        guardians to manage their family's logistics, shared with the family
+        members you invite.
+      </p>
 
-    <h2>Free and Premium Plans</h2>
-    <p>ParentFlare offers a free tier that includes access to 85+ curated activities, custom activities, and coaching scripts. No account or payment is required to use the free tier. Creating an optional account enables personalized suggestions based on your family profile.</p>
-    <p>ParentFlare Premium is an optional paid subscription at $5.00 USD per month. Premium adds follow-up conversations (up to 5 turns per session) for the activity generator and coaching script features, plus "Plan my time" &mdash; a personalized trip and day planner that creates custom activity plans. Premium subscriptions are processed securely through Stripe.</p>
+      <h2>2. Eligibility</h2>
 
-    <h2>Billing and Cancellation</h2>
-    <p>Premium subscriptions begin with a 7-day free trial. After the trial, you are billed monthly on the date your trial ends. You may cancel your subscription at any time through your account profile page or Stripe Customer Portal. If you cancel during the trial, you will not be charged. When you cancel after the trial, your Premium access continues until the end of your current billing period. There are no cancellation fees, no long-term commitments, and no questions asked.</p>
-    <p>Because ParentFlare Premium provides immediate access to AI-generated content upon subscription, refunds are generally not provided for partial billing periods. If you experience a technical issue that prevents you from using Premium features, please contact us at <a href="mailto:hello@parentflare.com">hello@parentflare.com</a> and we will make it right.</p>
+      <p>
+        You must be at least 18 years old and a parent or legal guardian (or
+        another adult managing a household's schedule) to use ParentFlare.
+        Accounts are for adults; children do not use the service.
+      </p>
 
-    <h2>AI-Generated Content</h2>
-    <p>The "Make me one," "Plan my time," and "Find the words" features use AI (powered by Anthropic's Claude) to generate custom activities, plans, and parenting scripts. AI-generated content is provided as personalized suggestions only. You know your child best &mdash; always use your own judgment before applying any suggestion. ParentFlare is not responsible for outcomes resulting from the use of AI-generated content.</p>
+      <h2>3. Beta Software</h2>
 
-    <h2>Use of the Service</h2>
-    <p>You agree to use ParentFlare for its intended purpose: helping parents find activities and parenting approaches for their children. You may not use the service for any unlawful purpose or in any way that could harm the service or other users.</p>
+      <p>
+        ParentFlare is currently in an invite-only beta, distributed through
+        Apple TestFlight. That means:
+      </p>
+      <ul>
+        <li>The service is provided free of charge during the beta.</li>
+        <li>Features may change, break, or be removed without notice.</li>
+        <li>
+          Data loss is possible. Keep the original school emails and paper forms
+          &mdash; ParentFlare is a lens on them, not a replacement for them.
+        </li>
+        <li>We may end the beta, or your access to it, at any time.</li>
+      </ul>
 
-    <h2>Changes to These Terms</h2>
-    <p>We may update these terms from time to time. If we make significant changes, we will update the "Last updated" date above. Your continued use of ParentFlare after changes constitutes acceptance of the updated terms.</p>
+      <p>
+        If we later introduce paid plans, we will tell you clearly and in
+        advance. You will never be silently charged.
+      </p>
 
-    <h2>Contact</h2>
-    <p>Questions about these terms? Email us at <a href="mailto:hello@parentflare.com">hello@parentflare.com</a>.</p>
-  </div>
+      <h2>4. Schedule Accuracy — Please Read This One</h2>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="footer-logo">ParentFlare</div>
-        <p class="footer-tagline">Make parenting doable.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Product</h4>
-        <a href="https://testflight.apple.com/join/pB9h2MFD">Get the Beta</a>
-        <a href="/#pricing">Pricing</a>
-        <a href="/#faq">FAQ</a>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="https://instagram.com/parentflare" target="_blank" rel="noopener">Instagram</a>
-        <a href="mailto:hello@parentflare.com">Email Us</a>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <a href="/terms">Terms of Service</a>
-        <a href="/privacy">Privacy Policy</a>
-      </div>
+      <p>
+        ParentFlare extracts events, dates, and deadlines from the content you
+        send in automatically. That extraction can be wrong or incomplete: a
+        date can be misread, a detail missed, a cancellation not caught. This is
+        why every item goes through your review before it lands on the calendar.
+      </p>
+
+      <p>
+        <strong
+          >You are responsible for verifying important dates, deadlines, and
+          requirements against the original source.</strong
+        >
+        ParentFlare is a convenience layer over your family's information, not a
+        guarantee. We are not responsible for missed events, missed deadlines,
+        unsigned forms, or other consequences of relying on extracted schedule
+        information without checking it.
+      </p>
+
+      <h2>5. Your Content</h2>
+
+      <p>
+        The emails, photos, and notes you send to ParentFlare remain yours. You
+        grant us a limited license to store, process, and display that content
+        solely to provide the service to you and your family, as described in
+        our <a href="/privacy">Privacy Policy</a>.
+      </p>
+
+      <p>
+        You are responsible for the content you send in. Only forward emails and
+        share photos that you have the right to share, and only invite family
+        members you intend to share your family's schedule with &mdash; everyone
+        in your family account sees the shared schedule.
+      </p>
+
+      <h2>6. Your Account and Family</h2>
+
+      <p>
+        You are responsible for keeping your account credentials secure and for
+        the activity that happens under your account. Inviting someone to your
+        family gives them access to your family's shared schedule and content;
+        invite thoughtfully. If a family relationship changes, contact us at
+        <a href="mailto:hello@parentflare.com">hello@parentflare.com</a> and we
+        will help you sort out account access.
+      </p>
+
+      <h2>7. Acceptable Use</h2>
+
+      <p>
+        Don't use ParentFlare to violate the law, to send content you have no
+        right to share, to attempt to access other families' data, or to probe,
+        disrupt, or overload the service. We may suspend or terminate accounts
+        that do.
+      </p>
+
+      <h2>8. Third-Party Services</h2>
+
+      <p>
+        ParentFlare connects to services you control, like Google Calendar and
+        Apple TestFlight. Your use of those services is governed by their own
+        terms. Events written to your calendar are yours and remain on your
+        calendar if you stop using ParentFlare.
+      </p>
+
+      <h2>9. Feedback</h2>
+
+      <p>
+        The beta exists to learn from you. If you send us feedback, suggestions,
+        or ideas, we can use them to improve ParentFlare without owing you
+        anything &mdash; though we'll be genuinely grateful.
+      </p>
+
+      <h2>10. Termination</h2>
+
+      <p>
+        You can stop using ParentFlare and request deletion of your account at
+        any time by emailing
+        <a href="mailto:hello@parentflare.com">hello@parentflare.com</a>. We may
+        suspend or terminate access for violations of these terms or, during the
+        beta, as part of winding down or changing the program. Upon termination,
+        your data is handled as described in the
+        <a href="/privacy">Privacy Policy</a>.
+      </p>
+
+      <h2>11. Disclaimers</h2>
+
+      <p>
+        ParentFlare is provided <strong>"as is" and "as available"</strong>,
+        without warranties of any kind, express or implied, including fitness
+        for a particular purpose and non-infringement. We do not warrant that
+        the service will be uninterrupted, error-free, or that extracted
+        schedule information will be accurate or complete.
+      </p>
+
+      <h2>12. Limitation of Liability</h2>
+
+      <p>
+        To the maximum extent permitted by law, ParentFlare and its creators
+        will not be liable for any indirect, incidental, special, consequential,
+        or exemplary damages &mdash; including missed events, missed deadlines,
+        or lost data &mdash; arising from your use of the service. Our total
+        liability for any claim will not exceed the greater of fifty dollars
+        ($50) or the amount you paid us in the twelve months before the claim
+        (which, during the free beta, is zero).
+      </p>
+
+      <h2>13. Governing Law</h2>
+
+      <p>
+        These terms are governed by the laws of the State of California, without
+        regard to conflict-of-law principles. Any disputes will be resolved in
+        the state or federal courts located in California.
+      </p>
+
+      <h2>14. Changes to These Terms</h2>
+
+      <p>
+        We may update these terms from time to time. We will notify you of
+        material changes by updating the "Last updated" date above, and for
+        significant changes during the beta, by telling you directly. Continued
+        use of the service after changes constitutes acceptance.
+      </p>
+
+      <h2>15. Contact</h2>
+
+      <p>
+        Questions about these terms? Email us at
+        <a href="mailto:hello@parentflare.com">hello@parentflare.com</a>.
+      </p>
     </div>
-    <div class="footer-bottom">
-      <p>Made with 🔥 by a dad of two boys.</p>
-      <p>&copy; 2026 ParentFlare</p>
-    </div>
-  </footer>
 
-</body>
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div
+            class="footer-logo"
+            style="display: flex; align-items: center; gap: 10px"
+          >
+            <img
+              src="/images/parentflare-mark.png"
+              alt="ParentFlare"
+              width="30"
+              height="30"
+              style="display: block; border-radius: 8px"
+            />
+            ParentFlare
+          </div>
+          <p class="footer-tagline">
+            The family calendar you run together.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="https://testflight.apple.com/join/QZ3VXNzN">Get the Beta</a>
+          <a href="/#how-it-works">How it works</a>
+          <a href="/#faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a
+            href="https://instagram.com/parentflare"
+            target="_blank"
+            rel="noopener"
+            >Instagram</a
+          >
+          <a href="mailto:hello@parentflare.com">Email Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="/terms">Terms of Service</a>
+          <a href="/privacy">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Made by a dad of two boys.</p>
+        <p>&copy; 2026 ParentFlare</p>
+      </div>
+    </footer>
+  </body>
 </html>
