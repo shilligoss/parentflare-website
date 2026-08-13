@@ -1,3 +1,10 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/hq",
+      "destination": "https://parentflare-agent.vercel.app/hq",
+      "permanent": false
+    }
+  ]
 }
